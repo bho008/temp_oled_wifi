@@ -29,7 +29,7 @@ Sketch.d Sketch.o: .././Sketch.cpp ../include\arduino/Arduino.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  ../include\arduino/Arduino.h ../include\arduino/pins_arduino.h \
  ../include\arduino/config.h ../include\arduino/OneWire.h \
- ../include\arduino/DallasTemperature.h
+ ../include\arduino/DallasTemperature.h .././myI2C.h
 
 ../include\arduino/Arduino.h:
 
@@ -106,3 +106,5 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../include\arduino/OneWire.h:
 
 ../include\arduino/DallasTemperature.h:
+
+.././myI2C.h:
