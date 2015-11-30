@@ -1,13 +1,18 @@
 ﻿/*Begining of Auto generated code by Atmel studio */
 #include <Arduino.h>
+#include <stdint.h>
+
 #include "config.h"
 #include <avr/io.h>
 #include <OneWire.h>
 #include <DallasTemperature.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "SoftwareSerial.h"
+//#include "dbg_putchar.h"
 #include "myI2C.h"
-#define F_CPU 10000000
+//#include "delay.h"
+#define F_CPU 8000000
 //#include "data.c"
 //#include "oled_setup.h"
 
@@ -50,17 +55,24 @@ DallasTemperature sensors(&oneWire);
 //
 
 //myI2c oled_screen;
+#define wifiTX 7
+#define wifiRX 6
+SoftwareSerial wifiPort(wifiRX,wifiTX);
 
 void setup() {
 	// put your setup code here, to run once:
-	digitalWrite( 8 , LOW );
-	pinMode( 8  , OUTPUT );
-	digitalWrite( 10 , LOW );
-	pinMode( 10 , OUTPUT );
+	//Serial.begin(57600);
+	//dbg_tx_init();
 	
+	delay(100);
+	wifiPort.begin(38400);
+	wifiPort.println("begin wifiport Serial");
+	delay(100);
 	// start serial port
-	Serial.begin(115200);
+	Serial.begin(38400);
 	Serial.println("Dallas Temperature IC Control Library Demo");
+	
+	
 
 	//  Wire.begin();
 	i2c_init();
@@ -85,10 +97,16 @@ void setup() {
 	setXY(5, 1);
 	sendStr(fill_string4);
 	
+	delay(10);
+	//dbg_putchar('a');
 }
 
 void loop() {
 	// put your main code here, to run repeatedly:
+	
+				wifiPort.println("hello");
+
+	
 	#ifdef BUSFAIL
 	
 	Serial.print(" Test:");
@@ -140,7 +158,7 @@ void loop() {
 		if(sensors.getAddress(tempDeviceAddress, i))
 		{
 			// Output the device ID
-			//Serial.print(" #");
+			Serial.print(" #");
 			//Serial.print(i,DEC);
 			//Serial.print("=");
 

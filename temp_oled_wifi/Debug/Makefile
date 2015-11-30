@@ -49,9 +49,11 @@ SUBDIRS :=  \
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
+../dbg_putchar.c \
 ../include/arduino/DallasTemperature.cpp \
 ../include/arduino/OneWire.cpp \
 ../Sketch.cpp \
+../SoftwareSerial.cpp \
 ../src/abi.cpp \
 ../src/CDC.cpp \
 ../src/HardwareSerial.cpp \
@@ -85,9 +87,11 @@ ASM_SRCS +=
 
 
 OBJS +=  \
+dbg_putchar.o \
 include/arduino/DallasTemperature.o \
 include/arduino/OneWire.o \
 Sketch.o \
+SoftwareSerial.o \
 src/abi.o \
 src/CDC.o \
 src/HardwareSerial.o \
@@ -114,9 +118,11 @@ src/WMath.o \
 src/WString.o
 
 OBJS_AS_ARGS +=  \
+dbg_putchar.o \
 include/arduino/DallasTemperature.o \
 include/arduino/OneWire.o \
 Sketch.o \
+SoftwareSerial.o \
 src/abi.o \
 src/CDC.o \
 src/HardwareSerial.o \
@@ -143,9 +149,11 @@ src/WMath.o \
 src/WString.o
 
 C_DEPS +=  \
+dbg_putchar.d \
 include/arduino/DallasTemperature.d \
 include/arduino/OneWire.d \
 Sketch.d \
+SoftwareSerial.d \
 src/abi.d \
 src/CDC.d \
 src/HardwareSerial.d \
@@ -172,9 +180,11 @@ src/WMath.d \
 src/WString.d
 
 C_DEPS_AS_ARGS +=  \
+dbg_putchar.d \
 include/arduino/DallasTemperature.d \
 include/arduino/OneWire.d \
 Sketch.d \
+SoftwareSerial.d \
 src/abi.d \
 src/CDC.d \
 src/HardwareSerial.d \
@@ -269,17 +279,28 @@ LINKER_SCRIPT_DEP+=
 
 
 
-include/arduino/%.o: ../include/arduino/%.cpp
+
+
+
+
+./%.o: .././%.c
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 4.9.2
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DDEBUG -DF_CPU=16000000L -DARDUINO=165-r2 -DARDUINO_AVR_UNO -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x0043 -DUSB_MANUFACTURER=Unknown  -I"../include\arduino" -I"../include\eightanaloginputs" -I"../include\ethernet" -I"../include\gemma" -I"../include\leonardo" -I"../include\mega" -I"../include\micro" -I"../include\robot_control" -I"../include\robot_motor" -I"../include\standard" -I"../include\yun"  -O1 -fno-threadsafe-statics -fno-exceptions -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega328p" -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DDEBUG -DF_CPU=16000000L -DARDUINO=165-r2 -DARDUINO_AVR_UNO -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x0043 -DUSB_MANUFACTURER=Unknown  -I"../include\arduino" -I"../include\eightanaloginputs" -I"../include\ethernet" -I"../include\gemma" -I"../include\leonardo" -I"../include\mega" -I"../include\micro" -I"../include\robot_control" -I"../include\robot_motor" -I"../include\standard" -I"../include\yun"  -O1 -fno-threadsafe-statics -fno-exceptions -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega328p" -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 ./%.o: .././%.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 4.9.2
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DDEBUG -DF_CPU=16000000L -DARDUINO=165-r2 -DARDUINO_AVR_UNO -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x0043 -DUSB_MANUFACTURER=Unknown  -I"../include\arduino" -I"../include\eightanaloginputs" -I"../include\ethernet" -I"../include\gemma" -I"../include\leonardo" -I"../include\mega" -I"../include\micro" -I"../include\robot_control" -I"../include\robot_motor" -I"../include\standard" -I"../include\yun"  -O1 -fno-threadsafe-statics -fno-exceptions -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega328p" -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DDEBUG -DF_CPU=8000000L -DARDUINO=165-r2 -DARDUINO_AVR_UNO -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x0043 -DUSB_MANUFACTURER=Unknown  -I"../include\arduino" -I"../include\eightanaloginputs" -I"../include\ethernet" -I"../include\gemma" -I"../include\leonardo" -I"../include\mega" -I"../include\micro" -I"../include\robot_control" -I"../include\robot_motor" -I"../include\standard" -I"../include\yun"  -O1 -fno-threadsafe-statics -fno-exceptions -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega328p" -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+include/arduino/%.o: ../include/arduino/%.cpp
+	@echo Building file: $<
+	@echo Invoking: AVR8/GNU C Compiler : 4.9.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DDEBUG -DF_CPU=8000000L -DARDUINO=165-r2 -DARDUINO_AVR_UNO -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x0043 -DUSB_MANUFACTURER=Unknown  -I"../include\arduino" -I"../include\eightanaloginputs" -I"../include\ethernet" -I"../include\gemma" -I"../include\leonardo" -I"../include\mega" -I"../include\micro" -I"../include\robot_control" -I"../include\robot_motor" -I"../include\standard" -I"../include\yun"  -O1 -fno-threadsafe-statics -fno-exceptions -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega328p" -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
@@ -293,7 +314,7 @@ src/%.o: ../src/%.c
 src/%.o: ../src/%.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 4.9.2
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DDEBUG -DF_CPU=16000000L -DARDUINO=165-r2 -DARDUINO_AVR_UNO -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x0043 -DUSB_MANUFACTURER=Unknown  -I"../include\arduino" -I"../include\eightanaloginputs" -I"../include\ethernet" -I"../include\gemma" -I"../include\leonardo" -I"../include\mega" -I"../include\micro" -I"../include\robot_control" -I"../include\robot_motor" -I"../include\standard" -I"../include\yun"  -O1 -fno-threadsafe-statics -fno-exceptions -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega328p" -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DDEBUG -DF_CPU=8000000L -DARDUINO=165-r2 -DARDUINO_AVR_UNO -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x0043 -DUSB_MANUFACTURER=Unknown  -I"../include\arduino" -I"../include\eightanaloginputs" -I"../include\ethernet" -I"../include\gemma" -I"../include\leonardo" -I"../include\mega" -I"../include\micro" -I"../include\robot_control" -I"../include\robot_motor" -I"../include\standard" -I"../include\yun"  -O1 -fno-threadsafe-statics -fno-exceptions -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega328p" -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 

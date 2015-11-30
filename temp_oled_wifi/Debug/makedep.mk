@@ -2,11 +2,15 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
+dbg_putchar.c
+
 include\arduino\DallasTemperature.cpp
 
 include\arduino\OneWire.cpp
 
 Sketch.cpp
+
+SoftwareSerial.cpp
 
 src\abi.cpp
 
