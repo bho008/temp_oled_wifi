@@ -30,17 +30,9 @@ src\HardwareSerial.cpp
 
 src\HardwareSerial0.cpp
 
-src\HardwareSerial1.cpp
-
-src\HardwareSerial2.cpp
-
-src\HardwareSerial3.cpp
-
 src\HID.cpp
 
 src\hooks.c
-
-src\IPAddress.cpp
 
 src\main.cpp
 
@@ -49,8 +41,6 @@ src\new.cpp
 src\Print.cpp
 
 src\Stream.cpp
-
-src\Tone.cpp
 
 src\USBCore.cpp
 

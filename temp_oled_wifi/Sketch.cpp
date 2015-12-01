@@ -16,8 +16,8 @@
 //#include "data.c"
 //#include "oled_setup.h"
 #include "Temp_SM.h"
-#include <SD.h>
-#include <SPI.h>
+//#include <SD.h>
+//#include <SPI.h>
 
 /*End of auto generated code by Atmel studio */
 
@@ -68,7 +68,7 @@ void setup() {
 	wifiPort.println("begin wifiport Serial");
 	delay(100);
 	// start serial port
-	Serial.begin(38400);
+	Serial.begin(115200);
 	Serial.println("Dallas Temperature IC Control Library Demo");
 	
 	

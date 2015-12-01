@@ -55,17 +55,12 @@ C_SRCS +=  \
 ../src/CDC.cpp \
 ../src/HardwareSerial.cpp \
 ../src/HardwareSerial0.cpp \
-../src/HardwareSerial1.cpp \
-../src/HardwareSerial2.cpp \
-../src/HardwareSerial3.cpp \
 ../src/HID.cpp \
 ../src/hooks.c \
-../src/IPAddress.cpp \
 ../src/main.cpp \
 ../src/new.cpp \
 ../src/Print.cpp \
 ../src/Stream.cpp \
-../src/Tone.cpp \
 ../src/USBCore.cpp \
 ../src/WInterrupts.c \
 ../src/wiring.c \
@@ -98,17 +93,12 @@ src/abi.o \
 src/CDC.o \
 src/HardwareSerial.o \
 src/HardwareSerial0.o \
-src/HardwareSerial1.o \
-src/HardwareSerial2.o \
-src/HardwareSerial3.o \
 src/HID.o \
 src/hooks.o \
-src/IPAddress.o \
 src/main.o \
 src/new.o \
 src/Print.o \
 src/Stream.o \
-src/Tone.o \
 src/USBCore.o \
 src/WInterrupts.o \
 src/wiring.o \
@@ -134,17 +124,12 @@ src/abi.o \
 src/CDC.o \
 src/HardwareSerial.o \
 src/HardwareSerial0.o \
-src/HardwareSerial1.o \
-src/HardwareSerial2.o \
-src/HardwareSerial3.o \
 src/HID.o \
 src/hooks.o \
-src/IPAddress.o \
 src/main.o \
 src/new.o \
 src/Print.o \
 src/Stream.o \
-src/Tone.o \
 src/USBCore.o \
 src/WInterrupts.o \
 src/wiring.o \
@@ -170,17 +155,12 @@ src/abi.d \
 src/CDC.d \
 src/HardwareSerial.d \
 src/HardwareSerial0.d \
-src/HardwareSerial1.d \
-src/HardwareSerial2.d \
-src/HardwareSerial3.d \
 src/HID.d \
 src/hooks.d \
-src/IPAddress.d \
 src/main.d \
 src/new.d \
 src/Print.d \
 src/Stream.d \
-src/Tone.d \
 src/USBCore.d \
 src/WInterrupts.d \
 src/wiring.d \
@@ -206,17 +186,12 @@ src/abi.d \
 src/CDC.d \
 src/HardwareSerial.d \
 src/HardwareSerial0.d \
-src/HardwareSerial1.d \
-src/HardwareSerial2.d \
-src/HardwareSerial3.d \
 src/HID.d \
 src/hooks.d \
-src/IPAddress.d \
 src/main.d \
 src/new.d \
 src/Print.d \
 src/Stream.d \
-src/Tone.d \
 src/USBCore.d \
 src/WInterrupts.d \
 src/wiring.d \
@@ -300,16 +275,6 @@ LINKER_SCRIPT_DEP+=
 
 
 
-
-
-
-
-
-
-
-
-
-
 include/arduino/%.o: ../include/arduino/%.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 4.9.2
@@ -334,7 +299,7 @@ include/arduino/utility/%.o: ../include/arduino/utility/%.cpp
 src/%.o: ../src/%.c
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 4.9.2
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DDEBUG -DF_CPU=16000000L -DARDUINO=165-r2 -DARDUINO_AVR_UNO -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x0043 -DUSB_MANUFACTURER=Unknown  -I"../include\arduino" -I"../include\standard"  -O1 -fno-threadsafe-statics -fno-exceptions -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega328p" -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DDEBUG -DF_CPU=8000000L -DARDUINO=165-r2 -DARDUINO_AVR_UNO -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x0043 -DUSB_MANUFACTURER=Unknown  -I"../include\arduino" -I"../include\standard"  -O1 -fno-threadsafe-statics -fno-exceptions -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega328p" -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 

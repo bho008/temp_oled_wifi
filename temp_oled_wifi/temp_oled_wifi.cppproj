@@ -163,7 +163,7 @@
     <ListValues>
       <Value>DEBUG</Value>
       <Value>DEBUG</Value>
-      <Value>F_CPU=16000000L</Value>
+      <Value>F_CPU=8000000L</Value>
       <Value>ARDUINO=165-r2</Value>
       <Value>ARDUINO_AVR_UNO</Value>
       <Value>ARDUINO_ARCH_AVR</Value>
@@ -303,9 +303,6 @@
     <Compile Include="include\arduino\HardwareSerial_private.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="include\arduino\IPAddress.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="include\arduino\new.h">
       <SubType>compile</SubType>
     </Compile>
@@ -372,22 +369,10 @@
     <Compile Include="src\HardwareSerial0.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\HardwareSerial1.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\HardwareSerial2.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\HardwareSerial3.cpp">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="src\HID.cpp">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\hooks.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\IPAddress.cpp">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\main.cpp">
@@ -400,9 +385,6 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\Stream.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Tone.cpp">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\USBCore.cpp">

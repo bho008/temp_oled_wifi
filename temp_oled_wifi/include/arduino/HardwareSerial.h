@@ -138,6 +138,7 @@ class HardwareSerial : public Stream
   extern HardwareSerial Serial;
   #define HAVE_HWSERIAL0
 #endif
+
 #if defined(UBRR1H)
   extern HardwareSerial Serial1;
   #define HAVE_HWSERIAL1

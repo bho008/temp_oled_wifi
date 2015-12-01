@@ -31,12 +31,7 @@ Sketch.d Sketch.o: .././Sketch.cpp ../include\arduino/Arduino.h \
  ../include\arduino/config.h ../include\arduino/OneWire.h \
  ../include\arduino/DallasTemperature.h .././SoftwareSerial.h \
  ../include\arduino/Stream.h .././myI2C.h .././Temp_SM.h \
- .././float_to_uchar.h ../include\arduino/SD.h \
- ../include\arduino/utility/SdFat.h ../include\arduino/utility/Sd2Card.h \
- ../include\arduino/utility/Sd2PinMap.h \
- ../include\arduino/utility/SdInfo.h \
- ../include\arduino/utility/FatStructs.h ../include\arduino/Print.h \
- ../include\arduino/utility/SdFatUtil.h ../include\arduino/SPI.h
+ .././float_to_uchar.h
 
 ../include\arduino/Arduino.h:
 
@@ -123,21 +118,3 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 .././Temp_SM.h:
 
 .././float_to_uchar.h:
-
-../include\arduino/SD.h:
-
-../include\arduino/utility/SdFat.h:
-
-../include\arduino/utility/Sd2Card.h:
-
-../include\arduino/utility/Sd2PinMap.h:
-
-../include\arduino/utility/SdInfo.h:
-
-../include\arduino/utility/FatStructs.h:
-
-../include\arduino/Print.h:
-
-../include\arduino/utility/SdFatUtil.h:
-
-../include\arduino/SPI.h:
