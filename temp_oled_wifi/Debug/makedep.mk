@@ -2,7 +2,17 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
-dbg_putchar.c
+include\arduino\File.cpp
+
+include\arduino\SD.cpp
+
+include\arduino\SPI.cpp
+
+include\arduino\utility\Sd2Card.cpp
+
+include\arduino\utility\SdFile.cpp
+
+include\arduino\utility\SdVolume.cpp
 
 include\arduino\DallasTemperature.cpp
 

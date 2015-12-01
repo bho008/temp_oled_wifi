@@ -175,16 +175,7 @@
   <avrgcc.compiler.directories.IncludePaths>
     <ListValues>
       <Value>../include\arduino</Value>
-      <Value>../include\eightanaloginputs</Value>
-      <Value>../include\ethernet</Value>
-      <Value>../include\gemma</Value>
-      <Value>../include\leonardo</Value>
-      <Value>../include\mega</Value>
-      <Value>../include\micro</Value>
-      <Value>../include\robot_control</Value>
-      <Value>../include\robot_motor</Value>
       <Value>../include\standard</Value>
-      <Value>../include\yun</Value>
     </ListValues>
   </avrgcc.compiler.directories.IncludePaths>
   <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
@@ -213,16 +204,7 @@
   <avrgcccpp.compiler.directories.IncludePaths>
     <ListValues>
       <Value>../include\arduino</Value>
-      <Value>../include\eightanaloginputs</Value>
-      <Value>../include\ethernet</Value>
-      <Value>../include\gemma</Value>
-      <Value>../include\leonardo</Value>
-      <Value>../include\mega</Value>
-      <Value>../include\micro</Value>
-      <Value>../include\robot_control</Value>
-      <Value>../include\robot_motor</Value>
       <Value>../include\standard</Value>
-      <Value>../include\yun</Value>
     </ListValues>
   </avrgcccpp.compiler.directories.IncludePaths>
   <avrgcccpp.compiler.optimization.level>Optimize (-O1)</avrgcccpp.compiler.optimization.level>
@@ -243,13 +225,55 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="dbg_putchar.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="dbg_putchar.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="delay.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="float_to_uchar.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\arduino\File.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\arduino\SD.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\arduino\SD.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\arduino\SPI.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\arduino\SPI.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\arduino\utility\FatStructs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\arduino\utility\Sd2Card.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\arduino\utility\Sd2Card.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\arduino\utility\Sd2PinMap.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\arduino\utility\SdFat.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\arduino\utility\SdFatmainpage.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\arduino\utility\SdFatUtil.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\arduino\utility\SdFile.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\arduino\utility\SdInfo.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\arduino\utility\SdVolume.cpp">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="myI2C.h">
@@ -325,33 +349,6 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="include\arduino\WString.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="include\eightanaloginputs\pins_arduino.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="include\ethernet\pins_arduino.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="include\gemma\pins_arduino.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="include\leonardo\pins_arduino.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="include\mega\pins_arduino.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="include\micro\pins_arduino.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="include\robot_control\pins_arduino.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="include\robot_motor\pins_arduino.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="include\yun\pins_arduino.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Sketch.cpp">
@@ -435,19 +432,14 @@
     <Compile Include="src\WString.cpp">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Temp_SM.h">
+      <SubType>compile</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="include\" />
     <Folder Include="include\arduino\" />
-    <Folder Include="include\eightanaloginputs\" />
-    <Folder Include="include\ethernet\" />
-    <Folder Include="include\gemma\" />
-    <Folder Include="include\leonardo\" />
-    <Folder Include="include\mega\" />
-    <Folder Include="include\micro\" />
-    <Folder Include="include\robot_control\" />
-    <Folder Include="include\robot_motor\" />
-    <Folder Include="include\yun\" />
+    <Folder Include="include\arduino\utility" />
     <Folder Include="src\" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />

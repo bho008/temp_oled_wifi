@@ -1,4 +1,6 @@
-Sketch.d Sketch.o: .././Sketch.cpp ../include\arduino/Arduino.h \
+include/arduino/File.d include/arduino/File.o: \
+ ../include/arduino/File.cpp ../include\arduino/SD.h \
+ ../include\arduino/Arduino.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stddef.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stdbool.h \
@@ -28,15 +30,13 @@ Sketch.d Sketch.o: .././Sketch.cpp ../include\arduino/Arduino.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  ../include\arduino/Arduino.h ../include\arduino/pins_arduino.h \
- ../include\arduino/config.h ../include\arduino/OneWire.h \
- ../include\arduino/DallasTemperature.h .././SoftwareSerial.h \
- ../include\arduino/Stream.h .././myI2C.h .././Temp_SM.h \
- .././float_to_uchar.h ../include\arduino/SD.h \
  ../include\arduino/utility/SdFat.h ../include\arduino/utility/Sd2Card.h \
  ../include\arduino/utility/Sd2PinMap.h \
  ../include\arduino/utility/SdInfo.h \
  ../include\arduino/utility/FatStructs.h ../include\arduino/Print.h \
- ../include\arduino/utility/SdFatUtil.h ../include\arduino/SPI.h
+ ../include\arduino/utility/SdFatUtil.h
+
+../include\arduino/SD.h:
 
 ../include\arduino/Arduino.h:
 
@@ -108,24 +108,6 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 ../include\arduino/pins_arduino.h:
 
-../include\arduino/config.h:
-
-../include\arduino/OneWire.h:
-
-../include\arduino/DallasTemperature.h:
-
-.././SoftwareSerial.h:
-
-../include\arduino/Stream.h:
-
-.././myI2C.h:
-
-.././Temp_SM.h:
-
-.././float_to_uchar.h:
-
-../include\arduino/SD.h:
-
 ../include\arduino/utility/SdFat.h:
 
 ../include\arduino/utility/Sd2Card.h:
@@ -139,5 +121,3 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../include\arduino/Print.h:
 
 ../include\arduino/utility/SdFatUtil.h:
-
-../include\arduino/SPI.h:
