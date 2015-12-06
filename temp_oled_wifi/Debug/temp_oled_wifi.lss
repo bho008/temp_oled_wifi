@@ -19,7 +19,7 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
   7 .debug_abbrev 00003d72  00000000  00000000  00021978  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   000039c0  00000000  00000000  000256ea  2**0
+  8 .debug_line   000039c1  00000000  00000000  000256ea  2**0
                   CONTENTS, READONLY, DEBUGGING
   9 .debug_frame  00002604  00000000  00000000  000290ac  2**2
                   CONTENTS, READONLY, DEBUGGING
@@ -6831,7 +6831,9 @@ void sendcommand(unsigned char com)
     2518:	08 95       	ret
 
 0000251a <loop>:
-	//dbg_putchar('a');
+		Serial.println("error opening test.txt");
+	}
+	*/
 }
 
 void loop() {
