@@ -237,6 +237,15 @@
     <Compile Include="include\arduino\SPI.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="include\arduino\TaskScheduler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\arduino\TinyGPS++.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\arduino\TinyGPS++.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="myI2C.h">
       <SubType>compile</SubType>
     </Compile>

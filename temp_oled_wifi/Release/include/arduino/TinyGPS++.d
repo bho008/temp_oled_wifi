@@ -1,4 +1,6 @@
-Sketch.d Sketch.o: .././Sketch.cpp ../include\arduino/Arduino.h \
+include/arduino/TinyGPS++.d include/arduino/TinyGPS++.o: \
+ ../include/arduino/TinyGPS++.cpp ../include/arduino/TinyGPS++.h \
+ ../include/arduino/Arduino.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stddef.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stdbool.h \
@@ -17,25 +19,22 @@ Sketch.d Sketch.o: .././Sketch.cpp ../include\arduino/Arduino.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\fuse.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
- ../include\arduino/binary.h ../include\arduino/WCharacter.h \
+ ../include/arduino/binary.h ../include/arduino/WCharacter.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\ctype.h \
- ../include\arduino/WString.h ../include\arduino/HardwareSerial.h \
- ../include\arduino/Stream.h ../include\arduino/Print.h \
+ ../include/arduino/WString.h ../include/arduino/HardwareSerial.h \
+ ../include/arduino/Stream.h ../include/arduino/Print.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdio.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stdarg.h \
- ../include\arduino/Printable.h ../include\arduino/USBAPI.h \
+ ../include/arduino/Printable.h ../include/arduino/USBAPI.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\eeprom.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
- ../include\arduino/Arduino.h ../include\arduino/pins_arduino.h \
- ../include\arduino/config.h ../include\arduino/OneWire.h \
- ../include\arduino/DallasTemperature.h .././SoftwareSerial.h \
- ../include\arduino/Stream.h .././myI2C.h .././Temp_SM.h \
- .././float_to_uchar.h ../include\arduino/TinyGPS++.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include-fixed\limits.h \
- ../include\arduino/TaskScheduler.h
+ ../include/arduino/pins_arduino.h \
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include-fixed\limits.h
 
-../include\arduino/Arduino.h:
+../include/arduino/TinyGPS++.h:
+
+../include/arduino/Arduino.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h:
 
@@ -73,27 +72,27 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h:
 
-../include\arduino/binary.h:
+../include/arduino/binary.h:
 
-../include\arduino/WCharacter.h:
+../include/arduino/WCharacter.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\ctype.h:
 
-../include\arduino/WString.h:
+../include/arduino/WString.h:
 
-../include\arduino/HardwareSerial.h:
+../include/arduino/HardwareSerial.h:
 
-../include\arduino/Stream.h:
+../include/arduino/Stream.h:
 
-../include\arduino/Print.h:
+../include/arduino/Print.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdio.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stdarg.h:
 
-../include\arduino/Printable.h:
+../include/arduino/Printable.h:
 
-../include\arduino/USBAPI.h:
+../include/arduino/USBAPI.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\eeprom.h:
 
@@ -101,28 +100,6 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h:
 
-../include\arduino/Arduino.h:
-
-../include\arduino/pins_arduino.h:
-
-../include\arduino/config.h:
-
-../include\arduino/OneWire.h:
-
-../include\arduino/DallasTemperature.h:
-
-.././SoftwareSerial.h:
-
-../include\arduino/Stream.h:
-
-.././myI2C.h:
-
-.././Temp_SM.h:
-
-.././float_to_uchar.h:
-
-../include\arduino/TinyGPS++.h:
+../include/arduino/pins_arduino.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include-fixed\limits.h:
-
-../include\arduino/TaskScheduler.h:

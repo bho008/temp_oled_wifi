@@ -17,7 +17,7 @@ int currTime = 0;
 
  float tempC = 0;// = sensors.getTempC(tempDeviceAddress);
  float tempF = 0;
-uint8_t counter = 0;
+int counter = 0;
 
 // Data wire is plugged into port 2 on the Arduino
 #define ONE_WIRE_BUS 9
@@ -29,7 +29,8 @@ OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature sensors(&oneWire);
 //
 
-
+unsigned char* tempF_uchar;
+char uchar[10];
 
 void tempSM(){
 	#ifdef BUSFAIL
@@ -82,18 +83,18 @@ void tempSM(){
 		if(sensors.getAddress(tempDeviceAddress, i))
 		{
 			// Output the device ID
-			Serial.print(" #");
-			Serial.print(i,DEC);
-			Serial.print("=");
+			//Serial.print(" #");
+			//Serial.print(i,DEC);
+			//Serial.print("=");
 
 
 			 tempC = sensors.getTempC(tempDeviceAddress);
 			 tempF = DallasTemperature::toFahrenheit(tempC);
-			Serial.println(DallasTemperature::toFahrenheit(tempC)); // Converts tempC to Fahrenheit
+			//Serial.println(DallasTemperature::toFahrenheit(tempC)); // Converts tempC to Fahrenheit
 			setXY(1, 7);
-			unsigned char* tempF_uchar;
+			
 			tempF_uchar = float_to_uChar(tempF);
-			char uchar[10];
+			uchar[10];
 			for(unsigned int i = 0; i < 7; i++){
 				uchar[i] = (unsigned char)tempF_uchar[i];
 				if(uchar[i] > 57)

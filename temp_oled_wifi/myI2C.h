@@ -143,7 +143,7 @@ void i2c_init(void) {
 	#else
 	I2C_PULLUPS_DISABLE
 	#endif
-	TWSR = 0;                                    // no prescaler => prescaler = 1
+	TWSR = 1;                                    // no prescaler => prescaler = 1
 	TWBR = ((F_CPU / I2C_SPEED) - 16) / 2;   // change the I2C clock rate
 	TWCR = 1<<TWEN;                              // enable twi module, no interrupt
 }

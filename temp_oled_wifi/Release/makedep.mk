@@ -4,6 +4,8 @@
 
 include\arduino\SPI.cpp
 
+include\arduino\TinyGPS++.cpp
+
 include\arduino\DallasTemperature.cpp
 
 include\arduino\OneWire.cpp

@@ -42,6 +42,7 @@ SUBDIRS :=  \
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
 ../include/arduino/SPI.cpp \
+../include/arduino/TinyGPS++.cpp \
 ../include/arduino/DallasTemperature.cpp \
 ../include/arduino/OneWire.cpp \
 ../Sketch.cpp \
@@ -74,6 +75,7 @@ ASM_SRCS +=
 
 OBJS +=  \
 include/arduino/SPI.o \
+include/arduino/TinyGPS++.o \
 include/arduino/DallasTemperature.o \
 include/arduino/OneWire.o \
 Sketch.o \
@@ -99,6 +101,7 @@ src/WString.o
 
 OBJS_AS_ARGS +=  \
 include/arduino/SPI.o \
+include/arduino/TinyGPS++.o \
 include/arduino/DallasTemperature.o \
 include/arduino/OneWire.o \
 Sketch.o \
@@ -124,6 +127,7 @@ src/WString.o
 
 C_DEPS +=  \
 include/arduino/SPI.d \
+include/arduino/TinyGPS++.d \
 include/arduino/DallasTemperature.d \
 include/arduino/OneWire.d \
 Sketch.d \
@@ -149,6 +153,7 @@ src/WString.d
 
 C_DEPS_AS_ARGS +=  \
 include/arduino/SPI.d \
+include/arduino/TinyGPS++.d \
 include/arduino/DallasTemperature.d \
 include/arduino/OneWire.d \
 Sketch.d \
@@ -186,6 +191,8 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 
