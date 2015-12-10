@@ -38,17 +38,17 @@ void tempSM(){
 
 	if (sensors.reset()) {
 		
-		Serial.print("good");
+		//Serial.print("good");
 		
 		} else {
 		
 		if (sensors.busFail()) {
 			
-			Serial.print("fail");
+			//Serial.print("fail");
 			
 			} else {
 			
-			Serial.print("empty");
+			//Serial.print("empty");
 			
 		}
 		

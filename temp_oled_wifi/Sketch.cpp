@@ -97,33 +97,39 @@ void TickFct_Temp();
 void TickFct_light();
 
 //Tasks
-Task t1(1000, TASK_FOREVER, &TickFct1, &runner, true);
-Task t2(200, TASK_FOREVER, &TickFct_OLED_output, &runner, true);
-Task t3(10, TASK_FOREVER, &TickFct_buttons, &runner, true);
+Task t1(500, TASK_FOREVER, &TickFct1, &runner, true);
+Task t2(500, TASK_FOREVER, &TickFct_OLED_output, &runner, true);
+Task t3(100, TASK_FOREVER, &TickFct_buttons, &runner, true);
 Task t4(1000, TASK_FOREVER, &TickFct_time, &runner, true);
-Task t5(1000, TASK_FOREVER, &TickFct_gps, &runner, true);
-Task t6(1000, TASK_FOREVER, &TickFct_UDP, &runner, true);
-Task t7(1000, TASK_FOREVER, &TickFct_Temp, &runner, true);
+Task t5(2000, TASK_FOREVER, &TickFct_gps, &runner, true);
+Task t6(2000, TASK_FOREVER, &TickFct_UDP, &runner, true);
+Task t7(2000, TASK_FOREVER, &TickFct_Temp, &runner, true);
 
 
 int testOutput = 0;
-enum TickFct1_states{wait_TickFct1, blink_TickFct1}TickFct1_state;
+int mcount = 0;
+char *char_array = "POTATO";
+enum TickFct1_states{wait_TickFct1, blink_TickFct1, long_TickFct1}TickFct1_state;
 void TickFct1(){
 	switch(TickFct1_state){
 		case wait_TickFct1:
-		digitalWrite(2, HIGH);
+		digitalWrite(2, LOW);
 		TickFct1_state = blink_TickFct1;
 
 		break;
 		
 		case blink_TickFct1:
-		digitalWrite(2, LOW);
+		digitalWrite(2, HIGH);
 		TickFct1_state = wait_TickFct1;
 
 		break;
 		
 		default:
 		TickFct1_state = wait_TickFct1;
+		mcount++;
+		digitalWrite(2, HIGH);
+		if(mcount > 2)
+			TickFct1_state = wait_TickFct1;
 		break;
 	}
 }
@@ -377,6 +383,7 @@ void TickFct_Temp(){
 	sendStr(itoa(light_reading, lightBuff, 10));
 }
 
+/*
 void displayInfo()
 {
 	Serial.print(F("Location: "));
@@ -427,6 +434,7 @@ void displayInfo()
 
 	Serial.println();
 }
+*/
 
 
 void connectUDP(){
@@ -543,6 +551,7 @@ void sendUDP(){
 	}
 }
 
+/*
 char* id = "#0=";
 char buffer_32[32];
 
@@ -561,7 +570,7 @@ void sendUDP_buffer(){
 	}
 }
 
-
+*/
 void loop() {
 	// put your main code here, to run repeatedly:
 
