@@ -76,16 +76,29 @@ TinyGPSPlus gps;
 #define gpsRX 6
 SoftwareSerial gpsPort(gpsRX,gpsTX);
 
+#define button_temp_change 5
+
+void sendUDP();
 
 Scheduler runner;
 
 //Tick functions
 void TickFct1();
 void TickFct_OLED_output();
+void TickFct_buttons();
+void TickFct_time();
+void TickFct_gps();
+void TickFct_UDP();
+void TickFct_Temp();
 
 //Tasks
-Task t1(300, TASK_FOREVER, &TickFct1, &runner, true);
+Task t1(1000, TASK_FOREVER, &TickFct1, &runner, true);
 Task t2(200, TASK_FOREVER, &TickFct_OLED_output, &runner, true);
+Task t3(10, TASK_FOREVER, &TickFct_buttons, &runner, true);
+Task t4(1000, TASK_FOREVER, &TickFct_time, &runner, true);
+Task t5(1000, TASK_FOREVER, &TickFct_gps, &runner, true);
+Task t6(1000, TASK_FOREVER, &TickFct_UDP, &runner, true);
+Task t7(1000, TASK_FOREVER, &TickFct_Temp, &runner, true);
 
 
 int testOutput = 0;
@@ -93,26 +106,181 @@ enum TickFct1_states{wait_TickFct1, blink_TickFct1}TickFct1_state;
 void TickFct1(){
 	switch(TickFct1_state){
 		case wait_TickFct1:
-			digitalWrite(2, HIGH);
-						TickFct1_state = blink_TickFct1;
-
-			break;
-			
-		case blink_TickFct1:
-		digitalWrite(2, LOW);
-					TickFct1_state = wait_TickFct1;
+		digitalWrite(2, HIGH);
+		TickFct1_state = blink_TickFct1;
 
 		break;
-			
+		
+		case blink_TickFct1:
+		digitalWrite(2, LOW);
+		TickFct1_state = wait_TickFct1;
+
+		break;
+		
 		default:
-			TickFct1_state = wait_TickFct1;
-			break;
+		TickFct1_state = wait_TickFct1;
+		break;
 	}
 }
 
-enum TickFct_OLED_output_states{}TickFct_OLED_output_state;
+
+enum TickFct_OLED_output_states{oled_wait, oled_display_temp_template, oled_display_title, oled_display_temp_f, oled_display_temp_c}TickFct_OLED_output_state;
 void TickFct_OLED_output(){
-	
+	switch(TickFct_OLED_output_state){
+		case oled_wait:
+		TickFct_OLED_output_state = oled_display_temp_template;
+		break;
+		
+		case oled_display_temp_template:
+		setXY(1,1);
+		sendStr(fill_string1);
+		setXY(2,1);
+		sendStr(fill_string2);
+
+		setXY(4, 1);
+		sendStr(fill_string3);
+		setXY(5, 1);
+		sendStr(fill_string4);
+		TickFct_OLED_output_state = oled_display_temp_f;
+		break;
+		
+		case oled_display_temp_f:
+		setXY(1, 7);
+
+		tempF_uchar = float_to_uChar(tempF);
+		uchar[10];
+		for(unsigned int i = 0; i < 7; i++){
+			uchar[i] = (unsigned char)tempF_uchar[i];
+			if(uchar[i] > 57)
+			uchar[i] = 0;
+		}
+		sendStr(uchar);  //print current temp
+
+		if(low_temp > tempF || low_temp == 0){
+			low_temp = tempF;
+			setXY(4, 6);
+			sendStr(uchar); //print lowest temp
+		}
+		if(max_temp < tempF){
+			max_temp = tempF;
+			setXY(5, 6);
+			sendStr(uchar); //print highest temp
+		}
+		
+		break;
+		
+		case oled_display_temp_c:
+				setXY(1, 7);
+
+		tempF_uchar = float_to_uChar(tempC);
+		uchar[10];
+		for(unsigned int i = 0; i < 7; i++){
+			uchar[i] = (unsigned char)tempF_uchar[i];
+			if(uchar[i] > 57)
+			uchar[i] = 0;
+		}
+		sendStr(uchar);  //print current temp
+
+		if(low_temp > tempF || low_temp == 0){
+			low_temp = tempF;
+			setXY(4, 6);
+			sendStr(uchar); //print lowest temp
+		}
+		if(max_temp < tempF){
+			max_temp = tempF;
+			setXY(5, 6);
+			sendStr(uchar); //print highest temp
+		}
+		break;
+		
+		
+		
+		default:
+		TickFct_OLED_output_state = oled_wait;
+		break;
+	}
+}
+
+enum time_states{oled_time_since_on}time_state;
+void TickFct_time(){
+	switch(time_state){
+		case oled_time_since_on:
+		char buf[10];
+		
+		sprintf(buf,"%d",counter);
+		setXY(7, 1);
+		sendStr(buf);
+		
+		counter++;
+		break;
+		
+		default:
+		time_state = oled_time_since_on;
+		break;
+	}
+}
+
+int button1 = 0;
+enum buttons_states{wait_buttons, change_temp_display, still_pressed}buttons_state;
+void TickFct_buttons(){
+	button1 = !digitalRead(button_temp_change);
+	switch(buttons_state){
+		case wait_buttons:
+		
+		if(button1)
+		buttons_state = change_temp_display;
+		break;
+		
+		case change_temp_display:
+		if(TickFct_OLED_output_state == oled_display_temp_c)
+		TickFct_OLED_output_state = oled_display_temp_f;
+		else
+		TickFct_OLED_output_state = oled_display_temp_c;
+		
+		if(button1)
+		buttons_state = still_pressed;
+		else
+		buttons_state = wait_buttons;
+		break;
+		
+		case still_pressed:
+		if(!button1)
+		buttons_state = wait_buttons;
+		
+				digitalWrite(2, HIGH);
+
+		break;
+		default:
+		buttons_state = wait_buttons;
+		break;
+	}
+}
+
+int led3_output = 0;
+void TickFct_gps(){
+	while (gpsPort.available() > 0)
+	gps.encode(gpsPort.read());
+	setXY(7, 5);
+	char satval[10];
+	sendStr(itoa(gps.satellites.value(), satval,10));
+	setXY(7, 7);
+	sendStr(itoa(gps.time.second(), satval, 10));
+	if(gps.satellites.value() > 4){
+		if(led3_output)
+			led3_output = 0;
+		else
+			led3_output = 1;
+			
+		digitalWrite(3, led3_output);
+	}
+}
+
+void TickFct_UDP(){
+	sendUDP();
+}
+
+void TickFct_Temp(){
+	tempSM();
 }
 
 void displayInfo()
@@ -192,6 +360,10 @@ void setup() {
 	digitalWrite(A3, LOW);
 	pinMode(2, OUTPUT);
 	digitalWrite(2, HIGH);
+	pinMode(button_temp_change, INPUT);
+	digitalWrite(button_temp_change, HIGH);
+	pinMode(3, OUTPUT);
+	digitalWrite(3, LOW);
 	
 	delay(100);
 	gpsPort.begin(9600);
@@ -215,7 +387,7 @@ void setup() {
 
 	sendcommand(0xa6);            //Set Normal Display (default)
 
-
+	/*
 	setXY(1,1);
 	sendStr(fill_string1);
 	setXY(2,1);
@@ -225,8 +397,26 @@ void setup() {
 	sendStr(fill_string3);
 	setXY(5, 1);
 	sendStr(fill_string4);
+	*/
+	runner.init();
+	runner.addTask(t1);
+	runner.addTask(t2);
+	runner.addTask(t3);
+	runner.addTask(t4);
+	runner.addTask(t5);
+	runner.addTask(t6);
+	runner.addTask(t7);
 	
-	delay(10);
+	t1.enable();
+	t2.enable();
+	t3.enable();
+	t4.enable();
+	t5.enable();
+	t6.enable();
+	t7.enable();
+	
+	//t1.setInterval(100);
+	//delay(10);
 }
 
 char *empty = "                      ";
@@ -274,13 +464,12 @@ void sendUDP_buffer(){
 void loop() {
 	// put your main code here, to run repeatedly:
 
-	 runner.execute();
-	tempSM();
+	runner.execute();
 	
 	
-	sendUDP();
+	//sendUDP();
 
-	
+	/*
 	while (gpsPort.available() > 0)
 	if (gps.encode(gpsPort.read()))
 	//displayInfo();
@@ -290,7 +479,9 @@ void loop() {
 		Serial.println(F("No GPS detected: check wiring."));
 		while(true);
 	}
+	*/
 	
+	/*
 	char buf[10];
 	
 	sprintf(buf,"%d",counter);
@@ -298,7 +489,8 @@ void loop() {
 	sendStr(buf);
 	
 	counter++;
-	delay(300);
+	*/
+	//delay(300);
 }
 
 

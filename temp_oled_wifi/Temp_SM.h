@@ -15,8 +15,8 @@ float max_temp = 0;
 float low_temp = 0;
 int currTime = 0;
 
- float tempC = 0;// = sensors.getTempC(tempDeviceAddress);
- float tempF = 0;
+float tempC = 0;// = sensors.getTempC(tempDeviceAddress);
+float tempF = 0;
 int counter = 0;
 
 // Data wire is plugged into port 2 on the Arduino
@@ -88,21 +88,25 @@ void tempSM(){
 			//Serial.print("=");
 
 
-			 tempC = sensors.getTempC(tempDeviceAddress);
-			 tempF = DallasTemperature::toFahrenheit(tempC);
+			tempC = sensors.getTempC(tempDeviceAddress);
+			tempF = DallasTemperature::toFahrenheit(tempC);
 			//Serial.println(DallasTemperature::toFahrenheit(tempC)); // Converts tempC to Fahrenheit
+			
+			/*
 			setXY(1, 7);
 			
 			tempF_uchar = float_to_uChar(tempF);
 			uchar[10];
 			for(unsigned int i = 0; i < 7; i++){
-				uchar[i] = (unsigned char)tempF_uchar[i];
-				if(uchar[i] > 57)
-				uchar[i] = 0;
+			uchar[i] = (unsigned char)tempF_uchar[i];
+			if(uchar[i] > 57)
+			uchar[i] = 0;
 			}
 
-			sendStr(uchar);
-
+			//sendStr(uchar);
+			//sendFloat(tempF, 2);
+			*/
+			/*
 			if(low_temp > tempF || low_temp == 0){
 				low_temp = tempF;
 				setXY(4, 6);
@@ -113,7 +117,7 @@ void tempSM(){
 				setXY(5, 6);
 				sendStr(uchar);
 			}
-
+			*/
 			
 
 

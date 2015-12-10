@@ -4,6 +4,7 @@
 #include <avr/pgmspace.h>
 #include <avr/io.h>
 #include <Arduino.h>
+#include <stdlib.h>
 //#include "data.c"
 
 void i2c_OLED_send_cmd(uint8_t);
@@ -12,6 +13,7 @@ void clear_display(void);
 void SendChar(unsigned char);
 void setXY(unsigned char row,unsigned char col);
 void sendStr( const char *string);
+void sendFloat(double, int);
 void init_OLED(void);
 void i2c_init();
 void i2c_OLED_init(void);
@@ -187,10 +189,47 @@ void sendStr(const char *string)
 			SendChar(myFont[*string-0x20][i]);
 
 			// SendChar(*string);
-			delay(10);
+			delay(1);
 		}
 		*string++;
 	}
+}
+
+void sendFloat(double input, int precision){
+	int int_input = (int)input;
+	char sendFloatBuff[10];
+	itoa(int_input, sendFloatBuff, 10);
+	//sendStr(sendFloatBuff);
+	
+	char x[50];
+	sprintf(x,"%5.5d",input);
+	sendStr(x);
+	
+	/*
+	if(precision > 0){
+		sendStr(".");
+		
+		
+		double frac;
+		long mult = 1;
+		byte padding = precision -1;
+		while(precision--)
+		mult *=10;
+		
+		if(input >= 0)
+		frac = (input - int_input) * mult;
+		else
+		frac = (int_input- input ) * mult;
+		unsigned long frac1 = frac;
+		while( frac1 /= 10 )
+		padding--;
+		while(  padding--)
+		sendStr("0");
+		itoa(frac1, sendFloatBuff, 10);
+		sendStr(sendFloatBuff);
+	
+	}
+	*/
 }
 
 //==========================================================//
