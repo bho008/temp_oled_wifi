@@ -77,8 +77,12 @@ TinyGPSPlus gps;
 SoftwareSerial gpsPort(gpsRX,gpsTX);
 
 #define button_temp_change 5
-
+#define button_title 8
+#define light_sensor A0
+int light_reading = 0;
 void sendUDP();
+
+uint8_t padding = 0;
 
 Scheduler runner;
 
@@ -90,6 +94,7 @@ void TickFct_time();
 void TickFct_gps();
 void TickFct_UDP();
 void TickFct_Temp();
+void TickFct_light();
 
 //Tasks
 Task t1(1000, TASK_FOREVER, &TickFct1, &runner, true);
@@ -123,19 +128,18 @@ void TickFct1(){
 	}
 }
 
-
-enum TickFct_OLED_output_states{oled_wait, oled_display_temp_template, oled_display_title, oled_display_temp_f, oled_display_temp_c}TickFct_OLED_output_state;
+uint8_t switched_temp = 0;
+enum TickFct_OLED_output_states{oled_display_title, oled_wait, oled_display_temp_template,  oled_display_temp_f, oled_display_temp_c}TickFct_OLED_output_state;
 void TickFct_OLED_output(){
 	switch(TickFct_OLED_output_state){
 		case oled_wait:
-		TickFct_OLED_output_state = oled_display_temp_template;
 		break;
 		
 		case oled_display_temp_template:
 		setXY(1,1);
-		sendStr(fill_string1);
+		sendStr("  Fahrenheit");
 		setXY(2,1);
-		sendStr(fill_string2);
+		sendStr(fill_string1);
 
 		setXY(4, 1);
 		sendStr(fill_string3);
@@ -145,7 +149,7 @@ void TickFct_OLED_output(){
 		break;
 		
 		case oled_display_temp_f:
-		setXY(1, 7);
+		setXY(2, 7);
 
 		tempF_uchar = float_to_uChar(tempF);
 		uchar[10];
@@ -156,21 +160,21 @@ void TickFct_OLED_output(){
 		}
 		sendStr(uchar);  //print current temp
 
-		if(low_temp > tempF || low_temp == 0){
+		if(low_temp > tempF || low_temp == 0 || switched_temp){
 			low_temp = tempF;
 			setXY(4, 6);
 			sendStr(uchar); //print lowest temp
 		}
-		if(max_temp < tempF){
+		if(max_temp < tempF || switched_temp){
 			max_temp = tempF;
 			setXY(5, 6);
 			sendStr(uchar); //print highest temp
 		}
-		
+		switched_temp = 0;
 		break;
 		
 		case oled_display_temp_c:
-				setXY(1, 7);
+		setXY(2, 7);
 
 		tempF_uchar = float_to_uChar(tempC);
 		uchar[10];
@@ -181,22 +185,39 @@ void TickFct_OLED_output(){
 		}
 		sendStr(uchar);  //print current temp
 
-		if(low_temp > tempF || low_temp == 0){
+		if(low_temp > tempF || low_temp == 0 || switched_temp){
 			low_temp = tempF;
 			setXY(4, 6);
 			sendStr(uchar); //print lowest temp
 		}
-		if(max_temp < tempF){
+		if(max_temp < tempF || switched_temp){
 			max_temp = tempF;
 			setXY(5, 6);
 			sendStr(uchar); //print highest temp
 		}
+		switched_temp = 0;
 		break;
 		
-		
+		case oled_display_title:
+		clear_display();
+		setXY(1, 1);
+		sendStr(" UCR CS 122A");
+		//sendStr("UCR CS 122A\nFall 2015\nBrian Ho\n(Stephanie Tong)\nP.O.T.A.T.O.");
+		setXY(2,1);
+		sendStr("  Fall 2015");
+		setXY(3,1);
+		sendStr("   Brian Ho");
+		setXY(4,1);
+		sendStr("(Stephanie");
+		setXY(5,1);
+		sendStr("        Tong)");
+		setXY(6,1);
+		sendStr(" P.O.T.A.T.O.");
+		TickFct_OLED_output_state = oled_wait;
+		break;
 		
 		default:
-		TickFct_OLED_output_state = oled_wait;
+		TickFct_OLED_output_state = oled_display_title;
 		break;
 	}
 }
@@ -212,6 +233,15 @@ void TickFct_time(){
 		sendStr(buf);
 		
 		counter++;
+		if(counter == 10){
+			padding++;
+		}
+		else if(counter == 100){
+			padding++;
+		}
+		else if(counter == 1000){
+			padding++;
+		}
 		break;
 		
 		default:
@@ -221,33 +251,75 @@ void TickFct_time(){
 }
 
 int button1 = 0;
-enum buttons_states{wait_buttons, change_temp_display, still_pressed}buttons_state;
+int button2 = 0;
+enum buttons_states{wait_buttons, change_temp_display, still_pressed, change_title_display}buttons_state;
 void TickFct_buttons(){
 	button1 = !digitalRead(button_temp_change);
+	button2 = !digitalRead(button_title);
 	switch(buttons_state){
 		case wait_buttons:
-		
-		if(button1)
+		//switched_temp = 0;
+		if(button1 && !(TickFct_OLED_output_state == oled_wait))
 		buttons_state = change_temp_display;
+		
+		if(button2){
+			buttons_state = change_title_display;
+		}
 		break;
 		
+		case change_title_display:
+		if(TickFct_OLED_output_state == oled_wait){
+			TickFct_OLED_output_state = oled_display_temp_template;
+			switched_temp = 1;
+
+			clear_display();
+		}
+		else{
+			TickFct_OLED_output_state = oled_display_title;
+			clear_display();
+		}
+		if(button2){
+			buttons_state = still_pressed;
+		}
+		else{
+			buttons_state = wait_buttons;
+
+		}
+		
+		break;
 		case change_temp_display:
-		if(TickFct_OLED_output_state == oled_display_temp_c)
-		TickFct_OLED_output_state = oled_display_temp_f;
-		else
-		TickFct_OLED_output_state = oled_display_temp_c;
+		switched_temp = 1;
+
+		if(TickFct_OLED_output_state == oled_display_temp_c){
+			TickFct_OLED_output_state = oled_display_temp_f;
+			setXY(1,1);
+			sendStr("  Fahrenheit");
+		}
+		else{
+			setXY(1,1);
+			sendStr("              ");
+			setXY(1,1);
+
+			sendStr("   Celcius");
+			TickFct_OLED_output_state = oled_display_temp_c;
+		}
 		
 		if(button1)
 		buttons_state = still_pressed;
-		else
-		buttons_state = wait_buttons;
+		else{
+			buttons_state = wait_buttons;
+
+		}
 		break;
 		
 		case still_pressed:
 		if(!button1)
 		buttons_state = wait_buttons;
 		
-				digitalWrite(2, HIGH);
+		digitalWrite(2, HIGH);
+		if(!button2){
+			buttons_state = wait_buttons;
+		}
 
 		break;
 		default:
@@ -260,17 +332,26 @@ int led3_output = 0;
 void TickFct_gps(){
 	while (gpsPort.available() > 0)
 	gps.encode(gpsPort.read());
-	setXY(7, 5);
+	setXY(7, 13);
 	char satval[10];
-	sendStr(itoa(gps.satellites.value(), satval,10));
-	setXY(7, 7);
-	sendStr(itoa(gps.time.second(), satval, 10));
+	sendStr(itoa(gps.satellites.value(), satval,8));
+	/*
+	char timeval[10];
+	if(gps.time.second() < 9){
+	setXY(7, 9);
+	sendStr("0");
+	setXY(7,10);
+	}
+	else
+	setXY(7, 9);
+	sendStr(itoa(gps.time.second(), timeval, 8));
+	*/
 	if(gps.satellites.value() > 4){
 		if(led3_output)
-			led3_output = 0;
+		led3_output = 0;
 		else
-			led3_output = 1;
-			
+		led3_output = 1;
+		
 		digitalWrite(3, led3_output);
 	}
 }
@@ -281,6 +362,19 @@ void TickFct_UDP(){
 
 void TickFct_Temp(){
 	tempSM();
+	setXY(7, 6);
+	//sendStr("      ");
+	light_reading = analogRead(light_sensor);
+	
+	if(light_reading < 1000){
+		setXY(7, 9);
+		sendStr(" ");
+	}
+
+	char lightBuff[8];
+		setXY(7, 6);
+
+	sendStr(itoa(light_reading, lightBuff, 10));
 }
 
 void displayInfo()
@@ -364,6 +458,13 @@ void setup() {
 	digitalWrite(button_temp_change, HIGH);
 	pinMode(3, OUTPUT);
 	digitalWrite(3, LOW);
+	
+	pinMode(button_title, INPUT);
+	digitalWrite(button_title, HIGH);
+	
+	//initialize light sensor
+	pinMode(light_sensor, INPUT);
+	
 	
 	delay(100);
 	gpsPort.begin(9600);
@@ -476,8 +577,8 @@ void loop() {
 
 	if (millis() > 5000 && gps.charsProcessed() < 10)
 	{
-		Serial.println(F("No GPS detected: check wiring."));
-		while(true);
+	Serial.println(F("No GPS detected: check wiring."));
+	while(true);
 	}
 	*/
 	

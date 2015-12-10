@@ -242,6 +242,8 @@ Discarded input sections
                 0x00000000       0x1c include/arduino/TinyGPS++.o
  .text._ZN11TinyGPSTime6minuteEv
                 0x00000000       0x2c include/arduino/TinyGPS++.o
+ .text._ZN11TinyGPSTime6secondEv
+                0x00000000       0x3e include/arduino/TinyGPS++.o
  .text._ZN11TinyGPSTime11centisecondEv
                 0x00000000       0x1c include/arduino/TinyGPS++.o
  .text._ZN11TinyGPSPlus12insertCustomEP13TinyGPSCustomPKci
@@ -560,13 +562,8 @@ Discarded input sections
  .bss           0x00000000        0x0 src/wiring_analog.o
  .text.analogReference
                 0x00000000        0x6 src/wiring_analog.o
- .text.analogRead
-                0x00000000       0x3a src/wiring_analog.o
  .text.analogWrite
                 0x00000000       0xbe src/wiring_analog.o
- .data.analog_reference
-                0x00000000        0x1 src/wiring_analog.o
- .comment       0x00000000       0x31 src/wiring_analog.o
  .text          0x00000000        0x0 src/wiring_digital.o
  .data          0x00000000        0x0 src/wiring_digital.o
  .bss           0x00000000        0x0 src/wiring_digital.o
@@ -1485,7 +1482,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x45d2
+.text           0x00000000     0x4784
  *(.vectors)
  .vectors       0x00000000       0x68 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.90/gcc/dev/atmega328p/avr5/crtatmega328p.o
                 0x00000000                __vector_default
@@ -1623,543 +1620,543 @@ END GROUP
  .text._ZN11TinyGPSDate7setDateEPKc
                 0x000006cc       0x1a include/arduino/TinyGPS++.o
                 0x000006cc                _ZN11TinyGPSDate7setDateEPKc
- .text._ZN11TinyGPSTime6secondEv
-                0x000006e6       0x3e include/arduino/TinyGPS++.o
-                0x000006e6                _ZN11TinyGPSTime6secondEv
  .text._ZN14TinyGPSDecimal6commitEv
-                0x00000724       0x2e include/arduino/TinyGPS++.o
-                0x00000724                _ZN14TinyGPSDecimal6commitEv
+                0x000006e6       0x2e include/arduino/TinyGPS++.o
+                0x000006e6                _ZN14TinyGPSDecimal6commitEv
  .text._ZN14TinyGPSDecimal3setEPKc
-                0x00000752       0x1a include/arduino/TinyGPS++.o
-                0x00000752                _ZN14TinyGPSDecimal3setEPKc
+                0x00000714       0x1a include/arduino/TinyGPS++.o
+                0x00000714                _ZN14TinyGPSDecimal3setEPKc
  .text._ZN14TinyGPSInteger6commitEv
-                0x0000076c       0x2e include/arduino/TinyGPS++.o
-                0x0000076c                _ZN14TinyGPSInteger6commitEv
+                0x0000072e       0x2e include/arduino/TinyGPS++.o
+                0x0000072e                _ZN14TinyGPSInteger6commitEv
  .text._ZN14TinyGPSInteger3setEPKc
-                0x0000079a       0x1a include/arduino/TinyGPS++.o
-                0x0000079a                _ZN14TinyGPSInteger3setEPKc
+                0x0000075c       0x1a include/arduino/TinyGPS++.o
+                0x0000075c                _ZN14TinyGPSInteger3setEPKc
  .text._ZN13TinyGPSCustom6commitEv
-                0x000007b4       0x26 include/arduino/TinyGPS++.o
-                0x000007b4                _ZN13TinyGPSCustom6commitEv
+                0x00000776       0x26 include/arduino/TinyGPS++.o
+                0x00000776                _ZN13TinyGPSCustom6commitEv
  .text._ZN13TinyGPSCustom3setEPKc
-                0x000007da        0x8 include/arduino/TinyGPS++.o
-                0x000007da                _ZN13TinyGPSCustom3setEPKc
+                0x0000079c        0x8 include/arduino/TinyGPS++.o
+                0x0000079c                _ZN13TinyGPSCustom3setEPKc
  .text._ZN11TinyGPSPlus16endOfTermHandlerEv
-                0x000007e2      0x32c include/arduino/TinyGPS++.o
-                0x000007e2                _ZN11TinyGPSPlus16endOfTermHandlerEv
+                0x000007a4      0x32c include/arduino/TinyGPS++.o
+                0x000007a4                _ZN11TinyGPSPlus16endOfTermHandlerEv
  .text._ZN11TinyGPSPlus6encodeEc
-                0x00000b0e      0x102 include/arduino/TinyGPS++.o
-                0x00000b0e                _ZN11TinyGPSPlus6encodeEc
+                0x00000ad0      0x102 include/arduino/TinyGPS++.o
+                0x00000ad0                _ZN11TinyGPSPlus6encodeEc
  .text._ZN17DallasTemperature19defaultAlarmHandlerEPh
-                0x00000c10        0x2 include/arduino/DallasTemperature.o
-                0x00000c10                _ZN17DallasTemperature19defaultAlarmHandlerEPh
+                0x00000bd2        0x2 include/arduino/DallasTemperature.o
+                0x00000bd2                _ZN17DallasTemperature19defaultAlarmHandlerEPh
  .text._ZN17DallasTemperatureC2EP7OneWire
-                0x00000c12       0x1e include/arduino/DallasTemperature.o
-                0x00000c12                _ZN17DallasTemperatureC1EP7OneWire
-                0x00000c12                _ZN17DallasTemperatureC2EP7OneWire
+                0x00000bd4       0x1e include/arduino/DallasTemperature.o
+                0x00000bd4                _ZN17DallasTemperatureC1EP7OneWire
+                0x00000bd4                _ZN17DallasTemperatureC2EP7OneWire
  .text._ZN17DallasTemperature14getDeviceCountEv
-                0x00000c30        0x6 include/arduino/DallasTemperature.o
-                0x00000c30                _ZN17DallasTemperature14getDeviceCountEv
+                0x00000bf2        0x6 include/arduino/DallasTemperature.o
+                0x00000bf2                _ZN17DallasTemperature14getDeviceCountEv
  .text._ZN17DallasTemperature12validAddressEPh
-                0x00000c36       0x1e include/arduino/DallasTemperature.o
-                0x00000c36                _ZN17DallasTemperature12validAddressEPh
+                0x00000bf8       0x1e include/arduino/DallasTemperature.o
+                0x00000bf8                _ZN17DallasTemperature12validAddressEPh
  .text._ZN17DallasTemperature10getAddressEPhh
-                0x00000c54       0x54 include/arduino/DallasTemperature.o
-                0x00000c54                _ZN17DallasTemperature10getAddressEPhh
+                0x00000c16       0x54 include/arduino/DallasTemperature.o
+                0x00000c16                _ZN17DallasTemperature10getAddressEPhh
  .text._ZN17DallasTemperature14readScratchPadEPhS0_
-                0x00000ca8       0xd8 include/arduino/DallasTemperature.o
-                0x00000ca8                _ZN17DallasTemperature14readScratchPadEPhS0_
+                0x00000c6a       0xd8 include/arduino/DallasTemperature.o
+                0x00000c6a                _ZN17DallasTemperature14readScratchPadEPhS0_
  .text._ZN17DallasTemperature11isConnectedEPhS0_
-                0x00000d80       0x22 include/arduino/DallasTemperature.o
-                0x00000d80                _ZN17DallasTemperature11isConnectedEPhS0_
+                0x00000d42       0x22 include/arduino/DallasTemperature.o
+                0x00000d42                _ZN17DallasTemperature11isConnectedEPhS0_
  .text._ZN17DallasTemperature15readPowerSupplyEPh
-                0x00000da2       0x68 include/arduino/DallasTemperature.o
-                0x00000da2                _ZN17DallasTemperature15readPowerSupplyEPh
+                0x00000d64       0x68 include/arduino/DallasTemperature.o
+                0x00000d64                _ZN17DallasTemperature15readPowerSupplyEPh
  .text._ZN17DallasTemperature13getResolutionEPh
-                0x00000e0a       0x66 include/arduino/DallasTemperature.o
-                0x00000e0a                _ZN17DallasTemperature13getResolutionEPh
+                0x00000dcc       0x66 include/arduino/DallasTemperature.o
+                0x00000dcc                _ZN17DallasTemperature13getResolutionEPh
  .text._ZN17DallasTemperature5beginEv
-                0x00000e70       0xd0 include/arduino/DallasTemperature.o
-                0x00000e70                _ZN17DallasTemperature5beginEv
+                0x00000e32       0xd0 include/arduino/DallasTemperature.o
+                0x00000e32                _ZN17DallasTemperature5beginEv
  .text._ZN17DallasTemperature21isConversionAvailableEPh
-                0x00000f40       0x3a include/arduino/DallasTemperature.o
-                0x00000f40                _ZN17DallasTemperature21isConversionAvailableEPh
+                0x00000f02       0x3a include/arduino/DallasTemperature.o
+                0x00000f02                _ZN17DallasTemperature21isConversionAvailableEPh
  .text._ZN17DallasTemperature27blockTillConversionCompleteEPhS0_
-                0x00000f7a       0x9e include/arduino/DallasTemperature.o
-                0x00000f7a                _ZN17DallasTemperature27blockTillConversionCompleteEPhS0_
+                0x00000f3c       0x9e include/arduino/DallasTemperature.o
+                0x00000f3c                _ZN17DallasTemperature27blockTillConversionCompleteEPhS0_
  .text._ZN17DallasTemperature19requestTemperaturesEv
-                0x00001018       0x42 include/arduino/DallasTemperature.o
-                0x00001018                _ZN17DallasTemperature19requestTemperaturesEv
+                0x00000fda       0x42 include/arduino/DallasTemperature.o
+                0x00000fda                _ZN17DallasTemperature19requestTemperaturesEv
  .text._ZN17DallasTemperature20calculateTemperatureEPhS0_
-                0x0000105a      0x148 include/arduino/DallasTemperature.o
-                0x0000105a                _ZN17DallasTemperature20calculateTemperatureEPhS0_
+                0x0000101c      0x148 include/arduino/DallasTemperature.o
+                0x0000101c                _ZN17DallasTemperature20calculateTemperatureEPhS0_
  .text._ZN17DallasTemperature8getTempCEPh
-                0x000011a2       0x60 include/arduino/DallasTemperature.o
-                0x000011a2                _ZN17DallasTemperature8getTempCEPh
+                0x00001164       0x60 include/arduino/DallasTemperature.o
+                0x00001164                _ZN17DallasTemperature8getTempCEPh
  .text._ZN17DallasTemperature19isParasitePowerModeEv
-                0x00001202        0x6 include/arduino/DallasTemperature.o
-                0x00001202                _ZN17DallasTemperature19isParasitePowerModeEv
+                0x000011c4        0x6 include/arduino/DallasTemperature.o
+                0x000011c4                _ZN17DallasTemperature19isParasitePowerModeEv
  .text._ZN17DallasTemperature12toFahrenheitEf
-                0x00001208       0x1a include/arduino/DallasTemperature.o
-                0x00001208                _ZN17DallasTemperature12toFahrenheitEf
+                0x000011ca       0x1a include/arduino/DallasTemperature.o
+                0x000011ca                _ZN17DallasTemperature12toFahrenheitEf
  .text._ZN7OneWire5resetEv
-                0x00001222       0x7e include/arduino/OneWire.o
-                0x00001222                _ZN7OneWire5resetEv
+                0x000011e4       0x7e include/arduino/OneWire.o
+                0x000011e4                _ZN7OneWire5resetEv
  .text._ZN7OneWire9write_bitEh
-                0x000012a0       0x66 include/arduino/OneWire.o
-                0x000012a0                _ZN7OneWire9write_bitEh
+                0x00001262       0x66 include/arduino/OneWire.o
+                0x00001262                _ZN7OneWire9write_bitEh
  .text._ZN7OneWire8read_bitEv
-                0x00001306       0x56 include/arduino/OneWire.o
-                0x00001306                _ZN7OneWire8read_bitEv
+                0x000012c8       0x56 include/arduino/OneWire.o
+                0x000012c8                _ZN7OneWire8read_bitEv
  .text._ZN7OneWire5writeEhh
-                0x0000135c       0x84 include/arduino/OneWire.o
-                0x0000135c                _ZN7OneWire5writeEhh
+                0x0000131e       0x84 include/arduino/OneWire.o
+                0x0000131e                _ZN7OneWire5writeEhh
  .text._ZN7OneWire4readEv
-                0x000013e0       0x38 include/arduino/OneWire.o
-                0x000013e0                _ZN7OneWire4readEv
+                0x000013a2       0x38 include/arduino/OneWire.o
+                0x000013a2                _ZN7OneWire4readEv
  .text._ZN7OneWire6selectEPKh
-                0x00001418       0x5a include/arduino/OneWire.o
-                0x00001418                _ZN7OneWire6selectEPKh
+                0x000013da       0x5a include/arduino/OneWire.o
+                0x000013da                _ZN7OneWire6selectEPKh
  .text._ZN7OneWire4skipEv
-                0x00001472        0x8 include/arduino/OneWire.o
-                0x00001472                _ZN7OneWire4skipEv
+                0x00001434        0x8 include/arduino/OneWire.o
+                0x00001434                _ZN7OneWire4skipEv
  .text._ZN7OneWire12reset_searchEv
-                0x0000147a       0x18 include/arduino/OneWire.o
-                0x0000147a                _ZN7OneWire12reset_searchEv
+                0x0000143c       0x18 include/arduino/OneWire.o
+                0x0000143c                _ZN7OneWire12reset_searchEv
  .text._ZN7OneWireC2Eh
-                0x00001492       0x4a include/arduino/OneWire.o
-                0x00001492                _ZN7OneWireC1Eh
-                0x00001492                _ZN7OneWireC2Eh
+                0x00001454       0x4a include/arduino/OneWire.o
+                0x00001454                _ZN7OneWireC1Eh
+                0x00001454                _ZN7OneWireC2Eh
  .text._ZN7OneWire6searchEPh
-                0x000014dc      0x120 include/arduino/OneWire.o
-                0x000014dc                _ZN7OneWire6searchEPh
+                0x0000149e      0x120 include/arduino/OneWire.o
+                0x0000149e                _ZN7OneWire6searchEPh
  .text._ZN7OneWire4crc8EPKhh
-                0x000015fc       0x1a include/arduino/OneWire.o
-                0x000015fc                _ZN7OneWire4crc8EPKhh
+                0x000015be       0x1a include/arduino/OneWire.o
+                0x000015be                _ZN7OneWire4crc8EPKhh
  .text._Z8TickFct1v
-                0x00001616       0x2c Sketch.o
-                0x00001616                _Z8TickFct1v
- .text._Z15TickFct_buttonsv
-                0x00001642       0x66 Sketch.o
-                0x00001642                _Z15TickFct_buttonsv
+                0x000015d8       0x2c Sketch.o
+                0x000015d8                _Z8TickFct1v
  .text._Z8i2c_initv
-                0x000016a8       0x18 Sketch.o
-                0x000016a8                _Z8i2c_initv
+                0x00001604       0x18 Sketch.o
+                0x00001604                _Z8i2c_initv
  .text._Z19waitTransmissionI2Cv
-                0x000016c0       0x2a Sketch.o
-                0x000016c0                _Z19waitTransmissionI2Cv
+                0x0000161c       0x2a Sketch.o
+                0x0000161c                _Z19waitTransmissionI2Cv
  .text._Z13i2c_rep_starth
-                0x000016ea       0x38 Sketch.o
-                0x000016ea                _Z13i2c_rep_starth
+                0x00001646       0x38 Sketch.o
+                0x00001646                _Z13i2c_rep_starth
  .text._Z9i2c_writeh
-                0x00001722        0xe Sketch.o
-                0x00001722                _Z9i2c_writeh
+                0x0000167e        0xe Sketch.o
+                0x0000167e                _Z9i2c_writeh
  .text._Z12i2c_writeReghhh
-                0x00001730       0x34 Sketch.o
-                0x00001730                _Z12i2c_writeReghhh
+                0x0000168c       0x34 Sketch.o
+                0x0000168c                _Z12i2c_writeReghhh
  .text._Z17i2c_OLED_send_cmdh
-                0x00001764       0x10 Sketch.o
-                0x00001764                _Z17i2c_OLED_send_cmdh
+                0x000016c0       0x10 Sketch.o
+                0x000016c0                _Z17i2c_OLED_send_cmdh
  .text._Z13i2c_OLED_initv
-                0x00001774       0x66 Sketch.o
-                0x00001774                _Z13i2c_OLED_initv
+                0x000016d0       0x66 Sketch.o
+                0x000016d0                _Z13i2c_OLED_initv
  .text._Z5setXYhh
-                0x000017da       0x34 Sketch.o
-                0x000017da                _Z5setXYhh
+                0x00001736       0x34 Sketch.o
+                0x00001736                _Z5setXYhh
  .text._Z18i2c_OLED_send_byteh
-                0x0000180e       0x10 Sketch.o
-                0x0000180e                _Z18i2c_OLED_send_byteh
+                0x0000176a       0x10 Sketch.o
+                0x0000176a                _Z18i2c_OLED_send_byteh
  .text._Z7sendStrPKc
-                0x0000181e       0x50 Sketch.o
-                0x0000181e                _Z7sendStrPKc
+                0x0000177a       0x50 Sketch.o
+                0x0000177a                _Z7sendStrPKc
  .text._Z12TickFct_timev
-                0x0000186e       0x8a Sketch.o
-                0x0000186e                _Z12TickFct_timev
+                0x000017ca       0xa8 Sketch.o
+                0x000017ca                _Z12TickFct_timev
  .text._Z13clear_displayv
-                0x000018f8       0x28 Sketch.o
-                0x000018f8                _Z13clear_displayv
+                0x00001872       0x28 Sketch.o
+                0x00001872                _Z13clear_displayv
+ .text._Z15TickFct_buttonsv
+                0x0000189a      0x120 Sketch.o
+                0x0000189a                _Z15TickFct_buttonsv
  .text._Z14float_to_uCharf
-                0x00001920      0x268 Sketch.o
-                0x00001920                _Z14float_to_uCharf
+                0x000019ba      0x268 Sketch.o
+                0x000019ba                _Z14float_to_uCharf
  .text._Z19TickFct_OLED_outputv
-                0x00001b88      0x1d2 Sketch.o
-                0x00001b88                _Z19TickFct_OLED_outputv
+                0x00001c22      0x248 Sketch.o
+                0x00001c22                _Z19TickFct_OLED_outputv
  .text._Z6tempSMv
-                0x00001d5a       0xc2 Sketch.o
-                0x00001d5a                _Z6tempSMv
+                0x00001e6a       0xc2 Sketch.o
+                0x00001e6a                _Z6tempSMv
  .text._Z12TickFct_Tempv
-                0x00001e1c        0x4 Sketch.o
-                0x00001e1c                _Z12TickFct_Tempv
+                0x00001f2c       0x78 Sketch.o
+                0x00001f2c                _Z12TickFct_Tempv
  .text._ZN4Task5resetEv
-                0x00001e20       0x2c Sketch.o
-                0x00001e20                _ZN4Task5resetEv
+                0x00001fa4       0x2c Sketch.o
+                0x00001fa4                _ZN4Task5resetEv
  .text._ZN4Task6enableEv
-                0x00001e4c       0x8e Sketch.o
-                0x00001e4c                _ZN4Task6enableEv
+                0x00001fd0       0x8e Sketch.o
+                0x00001fd0                _ZN4Task6enableEv
  .text._ZN4Task5delayEm
-                0x00001eda       0x60 Sketch.o
-                0x00001eda                _ZN4Task5delayEm
+                0x0000205e       0x60 Sketch.o
+                0x0000205e                _ZN4Task5delayEm
  .text._ZN4Task11setIntervalEm
-                0x00001f3a       0x14 Sketch.o
-                0x00001f3a                _ZN4Task11setIntervalEm
+                0x000020be       0x14 Sketch.o
+                0x000020be                _ZN4Task11setIntervalEm
  .text._ZN4Task7disableEv
-                0x00001f4e       0x78 Sketch.o
-                0x00001f4e                _ZN4Task7disableEv
+                0x000020d2       0x78 Sketch.o
+                0x000020d2                _ZN4Task7disableEv
  .text._ZN9Scheduler7addTaskER4Task
-                0x00001fc6       0x44 Sketch.o
-                0x00001fc6                _ZN9Scheduler7addTaskER4Task
+                0x0000214a       0x44 Sketch.o
+                0x0000214a                _ZN9Scheduler7addTaskER4Task
  .text._ZN4TaskC2EmlPFvvEP9SchedulerbPFbvES1_
-                0x0000200a       0xda Sketch.o
-                0x0000200a                _ZN4TaskC2EmlPFvvEP9SchedulerbPFbvES1_
-                0x0000200a                _ZN4TaskC1EmlPFvvEP9SchedulerbPFbvES1_
+                0x0000218e       0xda Sketch.o
+                0x0000218e                _ZN4TaskC2EmlPFvvEP9SchedulerbPFbvES1_
+                0x0000218e                _ZN4TaskC1EmlPFvvEP9SchedulerbPFbvES1_
  .text._ZN9Scheduler7executeEv
-                0x000020e4       0xee Sketch.o
-                0x000020e4                _ZN9Scheduler7executeEv
+                0x00002268       0xee Sketch.o
+                0x00002268                _ZN9Scheduler7executeEv
  .text._Z10connectUDPv
-                0x000021d2       0x70 Sketch.o
-                0x000021d2                _Z10connectUDPv
- .text.setup    0x00002242      0x168 Sketch.o
-                0x00002242                setup
+                0x00002356       0x70 Sketch.o
+                0x00002356                _Z10connectUDPv
+ .text.setup    0x000023c6      0x180 Sketch.o
+                0x000023c6                setup
  .text._Z7sendUDPv
-                0x000023aa       0xca Sketch.o
-                0x000023aa                _Z7sendUDPv
+                0x00002546       0xca Sketch.o
+                0x00002546                _Z7sendUDPv
  .text._Z11TickFct_UDPv
-                0x00002474        0x4 Sketch.o
-                0x00002474                _Z11TickFct_UDPv
- .text.loop     0x00002478        0x8 Sketch.o
-                0x00002478                loop
+                0x00002610        0x4 Sketch.o
+                0x00002610                _Z11TickFct_UDPv
+ .text.loop     0x00002614        0x8 Sketch.o
+                0x00002614                loop
  .text.startup._GLOBAL__sub_I_myFont
-                0x00002480      0x16a Sketch.o
+                0x0000261c      0x16a Sketch.o
  .text.exit._GLOBAL__sub_D_myFont
-                0x000025ea        0x8 Sketch.o
+                0x00002786        0x8 Sketch.o
  .text._Z11TickFct_gpsv
-                0x000025f2       0xda Sketch.o
-                0x000025f2                _Z11TickFct_gpsv
+                0x0000278e       0xb6 Sketch.o
+                0x0000278e                _Z11TickFct_gpsv
  .text._ZN14SoftwareSerial4readEv
-                0x000026cc       0x42 SoftwareSerial.o
-                0x000026cc                _ZN14SoftwareSerial4readEv
+                0x00002844       0x42 SoftwareSerial.o
+                0x00002844                _ZN14SoftwareSerial4readEv
  .text._ZN14SoftwareSerial5writeEh
-                0x0000270e       0xa8 SoftwareSerial.o
-                0x0000270e                _ZN14SoftwareSerial5writeEh
+                0x00002886       0xa8 SoftwareSerial.o
+                0x00002886                _ZN14SoftwareSerial5writeEh
  .text._ZN14SoftwareSerial4peekEv
-                0x000027b6       0x30 SoftwareSerial.o
-                0x000027b6                _ZN14SoftwareSerial4peekEv
+                0x0000292e       0x30 SoftwareSerial.o
+                0x0000292e                _ZN14SoftwareSerial4peekEv
  .text._ZN14SoftwareSerial9availableEv
-                0x000027e6       0x30 SoftwareSerial.o
-                0x000027e6                _ZN14SoftwareSerial9availableEv
+                0x0000295e       0x30 SoftwareSerial.o
+                0x0000295e                _ZN14SoftwareSerial9availableEv
  .text._ZN14SoftwareSerial5flushEv
-                0x00002816       0x1e SoftwareSerial.o
-                0x00002816                _ZN14SoftwareSerial5flushEv
+                0x0000298e       0x1e SoftwareSerial.o
+                0x0000298e                _ZN14SoftwareSerial5flushEv
  .text._ZN14SoftwareSerial13stopListeningEv
-                0x00002834       0x2c SoftwareSerial.o
-                0x00002834                _ZN14SoftwareSerial13stopListeningEv
+                0x000029ac       0x2c SoftwareSerial.o
+                0x000029ac                _ZN14SoftwareSerial13stopListeningEv
  .text._ZN14SoftwareSerial6listenEv
-                0x00002860       0x52 SoftwareSerial.o
-                0x00002860                _ZN14SoftwareSerial6listenEv
+                0x000029d8       0x52 SoftwareSerial.o
+                0x000029d8                _ZN14SoftwareSerial6listenEv
  .text.__vector_3
-                0x000028b2       0xf4 SoftwareSerial.o
-                0x000028b2                __vector_5
-                0x000028b2                __vector_4
-                0x000028b2                __vector_3
+                0x00002a2a       0xf4 SoftwareSerial.o
+                0x00002a2a                __vector_5
+                0x00002a2a                __vector_4
+                0x00002a2a                __vector_3
  .text._ZN14SoftwareSerialD2Ev
-                0x000029a6        0xe SoftwareSerial.o
-                0x000029a6                _ZN14SoftwareSerialD1Ev
-                0x000029a6                _ZN14SoftwareSerialD2Ev
+                0x00002b1e        0xe SoftwareSerial.o
+                0x00002b1e                _ZN14SoftwareSerialD1Ev
+                0x00002b1e                _ZN14SoftwareSerialD2Ev
  .text._ZN14SoftwareSerial5setTXEh
-                0x000029b4       0x52 SoftwareSerial.o
-                0x000029b4                _ZN14SoftwareSerial5setTXEh
+                0x00002b2c       0x52 SoftwareSerial.o
+                0x00002b2c                _ZN14SoftwareSerial5setTXEh
  .text._ZN14SoftwareSerial5setRXEh
-                0x00002a06       0x52 SoftwareSerial.o
-                0x00002a06                _ZN14SoftwareSerial5setRXEh
+                0x00002b7e       0x52 SoftwareSerial.o
+                0x00002b7e                _ZN14SoftwareSerial5setRXEh
  .text._ZN14SoftwareSerialC2Ehhb
-                0x00002a58       0x56 SoftwareSerial.o
-                0x00002a58                _ZN14SoftwareSerialC1Ehhb
-                0x00002a58                _ZN14SoftwareSerialC2Ehhb
+                0x00002bd0       0x56 SoftwareSerial.o
+                0x00002bd0                _ZN14SoftwareSerialC1Ehhb
+                0x00002bd0                _ZN14SoftwareSerialC2Ehhb
  .text._ZN14SoftwareSerial5beginEl
-                0x00002aae      0x11c SoftwareSerial.o
-                0x00002aae                _ZN14SoftwareSerial5beginEl
+                0x00002c26      0x11c SoftwareSerial.o
+                0x00002c26                _ZN14SoftwareSerial5beginEl
  .text._ZN14HardwareSerial9availableEv
-                0x00002bca       0x18 src/HardwareSerial.o
-                0x00002bca                _ZN14HardwareSerial9availableEv
+                0x00002d42       0x18 src/HardwareSerial.o
+                0x00002d42                _ZN14HardwareSerial9availableEv
  .text._ZN14HardwareSerial4peekEv
-                0x00002be2       0x1c src/HardwareSerial.o
-                0x00002be2                _ZN14HardwareSerial4peekEv
+                0x00002d5a       0x1c src/HardwareSerial.o
+                0x00002d5a                _ZN14HardwareSerial4peekEv
  .text._ZN14HardwareSerial4readEv
-                0x00002bfe       0x28 src/HardwareSerial.o
-                0x00002bfe                _ZN14HardwareSerial4readEv
+                0x00002d76       0x28 src/HardwareSerial.o
+                0x00002d76                _ZN14HardwareSerial4readEv
  .text._Z14serialEventRunv
-                0x00002c26       0x1c src/HardwareSerial.o
-                0x00002c26                _Z14serialEventRunv
+                0x00002d9e       0x1c src/HardwareSerial.o
+                0x00002d9e                _Z14serialEventRunv
  .text._ZN14HardwareSerial17_tx_udr_empty_irqEv
-                0x00002c42       0x42 src/HardwareSerial.o
-                0x00002c42                _ZN14HardwareSerial17_tx_udr_empty_irqEv
+                0x00002dba       0x42 src/HardwareSerial.o
+                0x00002dba                _ZN14HardwareSerial17_tx_udr_empty_irqEv
  .text._ZN14HardwareSerial5flushEv
-                0x00002c84       0x44 src/HardwareSerial.o
-                0x00002c84                _ZN14HardwareSerial5flushEv
+                0x00002dfc       0x44 src/HardwareSerial.o
+                0x00002dfc                _ZN14HardwareSerial5flushEv
  .text._ZN14HardwareSerial5writeEh
-                0x00002cc8       0x8e src/HardwareSerial.o
-                0x00002cc8                _ZN14HardwareSerial5writeEh
+                0x00002e40       0x8e src/HardwareSerial.o
+                0x00002e40                _ZN14HardwareSerial5writeEh
  .text._ZN14HardwareSerial5beginEmh
-                0x00002d56       0xc0 src/HardwareSerial.o
-                0x00002d56                _ZN14HardwareSerial5beginEmh
+                0x00002ece       0xc0 src/HardwareSerial.o
+                0x00002ece                _ZN14HardwareSerial5beginEmh
  .text.__vector_18
-                0x00002e16       0x64 src/HardwareSerial0.o
-                0x00002e16                __vector_18
+                0x00002f8e       0x64 src/HardwareSerial0.o
+                0x00002f8e                __vector_18
  .text.__vector_19
-                0x00002e7a       0x4c src/HardwareSerial0.o
-                0x00002e7a                __vector_19
+                0x00002ff2       0x4c src/HardwareSerial0.o
+                0x00002ff2                __vector_19
  .text._Z17Serial0_availablev
-                0x00002ec6       0x14 src/HardwareSerial0.o
-                0x00002ec6                _Z17Serial0_availablev
+                0x0000303e       0x14 src/HardwareSerial0.o
+                0x0000303e                _Z17Serial0_availablev
  .text.startup._GLOBAL__sub_I___vector_18
-                0x00002eda       0x5a src/HardwareSerial0.o
- .text.__empty  0x00002f34        0x2 src/hooks.o
-                0x00002f34                yield
+                0x00003052       0x5a src/HardwareSerial0.o
+ .text.__empty  0x000030ac        0x2 src/hooks.o
+                0x000030ac                yield
  .text.initVariant
-                0x00002f36        0x2 src/main.o
-                0x00002f36                initVariant
+                0x000030ae        0x2 src/main.o
+                0x000030ae                initVariant
  .text.startup.main
-                0x00002f38       0x1e src/main.o
-                0x00002f38                main
+                0x000030b0       0x1e src/main.o
+                0x000030b0                main
  .text._ZN5Print5writeEPKhj
-                0x00002f56       0x50 src/Print.o
-                0x00002f56                _ZN5Print5writeEPKhj
+                0x000030ce       0x50 src/Print.o
+                0x000030ce                _ZN5Print5writeEPKhj
  .text._ZN5Print5writeEPKc
-                0x00002fa6       0x2a src/Print.o
-                0x00002fa6                _ZN5Print5writeEPKc
+                0x0000311e       0x2a src/Print.o
+                0x0000311e                _ZN5Print5writeEPKc
  .text._ZN5Print5printEPKc
-                0x00002fd0        0x4 src/Print.o
-                0x00002fd0                _ZN5Print5printEPKc
+                0x00003148        0x4 src/Print.o
+                0x00003148                _ZN5Print5printEPKc
  .text._ZN5Print5printEc
-                0x00002fd4        0xe src/Print.o
-                0x00002fd4                _ZN5Print5printEc
+                0x0000314c        0xe src/Print.o
+                0x0000314c                _ZN5Print5printEc
  .text._ZN5Print7printlnEv
-                0x00002fe2        0x8 src/Print.o
-                0x00002fe2                _ZN5Print7printlnEv
+                0x0000315a        0x8 src/Print.o
+                0x0000315a                _ZN5Print7printlnEv
  .text._ZN5Print7printlnEPKc
-                0x00002fea       0x24 src/Print.o
-                0x00002fea                _ZN5Print7printlnEPKc
+                0x00003162       0x24 src/Print.o
+                0x00003162                _ZN5Print7printlnEPKc
  .text._ZN5Print11printNumberEmh
-                0x0000300e       0xac src/Print.o
-                0x0000300e                _ZN5Print11printNumberEmh
+                0x00003186       0xac src/Print.o
+                0x00003186                _ZN5Print11printNumberEmh
  .text._ZN5Print5printEli
-                0x000030ba       0x94 src/Print.o
-                0x000030ba                _ZN5Print5printEli
+                0x00003232       0x94 src/Print.o
+                0x00003232                _ZN5Print5printEli
  .text._ZN5Print10printFloatEdh
-                0x0000314e      0x1ca src/Print.o
-                0x0000314e                _ZN5Print10printFloatEdh
+                0x000032c6      0x1ca src/Print.o
+                0x000032c6                _ZN5Print10printFloatEdh
  .text._ZN5Print5printEdi
-                0x00003318        0x4 src/Print.o
-                0x00003318                _ZN5Print5printEdi
+                0x00003490        0x4 src/Print.o
+                0x00003490                _ZN5Print5printEdi
  .text._ZN6Stream9timedReadEv
-                0x0000331c       0x60 src/Stream.o
-                0x0000331c                _ZN6Stream9timedReadEv
+                0x00003494       0x60 src/Stream.o
+                0x00003494                _ZN6Stream9timedReadEv
  .text._ZN6Stream9findMultiEPNS_11MultiTargetEi
-                0x0000337c      0x132 src/Stream.o
-                0x0000337c                _ZN6Stream9findMultiEPNS_11MultiTargetEi
+                0x000034f4      0x132 src/Stream.o
+                0x000034f4                _ZN6Stream9findMultiEPNS_11MultiTargetEi
  .text._ZN6Stream9findUntilEPcjS0_j.part.0
-                0x000034ae       0x4a src/Stream.o
+                0x00003626       0x4a src/Stream.o
  .text._ZN6Stream4findEPc
-                0x000034f8       0x14 src/Stream.o
-                0x000034f8                _ZN6Stream4findEPc
+                0x00003670       0x14 src/Stream.o
+                0x00003670                _ZN6Stream4findEPc
  .text.__vector_1
-                0x0000350c       0x5a src/WInterrupts.o
-                0x0000350c                __vector_1
+                0x00003684       0x5a src/WInterrupts.o
+                0x00003684                __vector_1
  .text.__vector_2
-                0x00003566       0x5a src/WInterrupts.o
-                0x00003566                __vector_2
+                0x000036de       0x5a src/WInterrupts.o
+                0x000036de                __vector_2
  .text.__vector_16
-                0x000035c0       0x94 src/wiring.o
-                0x000035c0                __vector_16
- .text.millis   0x00003654       0x18 src/wiring.o
-                0x00003654                millis
- .text.micros   0x0000366c       0x4a src/wiring.o
-                0x0000366c                micros
- .text.delay    0x000036b6       0x50 src/wiring.o
-                0x000036b6                delay
+                0x00003738       0x94 src/wiring.o
+                0x00003738                __vector_16
+ .text.millis   0x000037cc       0x18 src/wiring.o
+                0x000037cc                millis
+ .text.micros   0x000037e4       0x4a src/wiring.o
+                0x000037e4                micros
+ .text.delay    0x0000382e       0x50 src/wiring.o
+                0x0000382e                delay
  .text.delayMicroseconds
-                0x00003706       0x12 src/wiring.o
-                0x00003706                delayMicroseconds
- .text.init     0x00003718       0x76 src/wiring.o
-                0x00003718                init
+                0x0000387e       0x12 src/wiring.o
+                0x0000387e                delayMicroseconds
+ .text.init     0x00003890       0x76 src/wiring.o
+                0x00003890                init
+ .text.analogRead
+                0x00003906       0x3a src/wiring_analog.o
+                0x00003906                analogRead
  .text.turnOffPWM
-                0x0000378e       0x52 src/wiring_digital.o
- .text.pinMode  0x000037e0       0x78 src/wiring_digital.o
-                0x000037e0                pinMode
+                0x00003940       0x52 src/wiring_digital.o
+ .text.pinMode  0x00003992       0x78 src/wiring_digital.o
+                0x00003992                pinMode
  .text.digitalWrite
-                0x00003858       0x60 src/wiring_digital.o
-                0x00003858                digitalWrite
+                0x00003a0a       0x60 src/wiring_digital.o
+                0x00003a0a                digitalWrite
  .text.digitalRead
-                0x000038b8       0x52 src/wiring_digital.o
-                0x000038b8                digitalRead
+                0x00003a6a       0x52 src/wiring_digital.o
+                0x00003a6a                digitalRead
  .text.avr-libc.fplib
-                0x0000390a        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(addsf3.o)
-                0x0000390a                __subsf3
-                0x0000390c                __addsf3
+                0x00003abc        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(addsf3.o)
+                0x00003abc                __subsf3
+                0x00003abe                __addsf3
  .text.avr-libc.fplib
-                0x00003918       0xcc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(addsf3x.o)
-                0x0000393a                __addsf3x
+                0x00003aca       0xcc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(addsf3x.o)
+                0x00003aec                __addsf3x
  .text.avr-libc.fplib
-                0x000039e4        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(cmpsf2.o)
-                0x000039e4                __nesf2
-                0x000039e4                __eqsf2
-                0x000039e4                __cmpsf2
-                0x000039e4                __ltsf2
-                0x000039e4                __lesf2
+                0x00003b96        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(cmpsf2.o)
+                0x00003b96                __nesf2
+                0x00003b96                __eqsf2
+                0x00003b96                __cmpsf2
+                0x00003b96                __ltsf2
+                0x00003b96                __lesf2
  .text.avr-libc.fplib
-                0x000039ee        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(divsf3.o)
-                0x000039ee                __divsf3
+                0x00003ba0        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(divsf3.o)
+                0x00003ba0                __divsf3
  .text.avr-libc.fplib
-                0x000039f6       0xdc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(divsf3x.o)
-                0x00003a16                __divsf3x
-                0x00003a1c                __divsf3_pse
+                0x00003ba8       0xdc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(divsf3x.o)
+                0x00003bc8                __divsf3x
+                0x00003bce                __divsf3_pse
  .text.avr-libc.fplib
-                0x00003ad2        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fixsfsi.o)
-                0x00003ad2                __fixsfsi
+                0x00003c84        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fixsfsi.o)
+                0x00003c84                __fixsfsi
  .text.avr-libc.fplib
-                0x00003ae0       0x5e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fixunssfsi.o)
-                0x00003ae0                __fixunssfsi
+                0x00003c92       0x5e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fixunssfsi.o)
+                0x00003c92                __fixunssfsi
  .text.avr-libc.fplib
-                0x00003b3e       0x7a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(floatsisf.o)
-                0x00003b3e                __floatunsisf
-                0x00003b42                __floatsisf
+                0x00003cf0       0x7a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(floatsisf.o)
+                0x00003cf0                __floatunsisf
+                0x00003cf4                __floatsisf
  .text.avr-libc.fplib
-                0x00003bb8       0x48 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fp_cmp.o)
-                0x00003bb8                __fp_cmp
+                0x00003d6a       0x48 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fp_cmp.o)
+                0x00003d6a                __fp_cmp
  .text.avr-libc.fplib
-                0x00003c00        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fp_inf.o)
-                0x00003c00                __fp_inf
+                0x00003db2        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fp_inf.o)
+                0x00003db2                __fp_inf
  .text.avr-libc.fplib
-                0x00003c0c        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fp_nan.o)
-                0x00003c0c                __fp_nan
+                0x00003dbe        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fp_nan.o)
+                0x00003dbe                __fp_nan
  .text.avr-libc.fplib
-                0x00003c12        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fp_pscA.o)
-                0x00003c12                __fp_pscA
+                0x00003dc4        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fp_pscA.o)
+                0x00003dc4                __fp_pscA
  .text.avr-libc.fplib
-                0x00003c20        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fp_pscB.o)
-                0x00003c20                __fp_pscB
+                0x00003dd2        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fp_pscB.o)
+                0x00003dd2                __fp_pscB
  .text.avr-libc.fplib
-                0x00003c2e       0x22 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fp_round.o)
-                0x00003c2e                __fp_round
+                0x00003de0       0x22 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fp_round.o)
+                0x00003de0                __fp_round
  .text.avr-libc.fplib
-                0x00003c50       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fp_split3.o)
-                0x00003c50                __fp_split3
-                0x00003c60                __fp_splitA
+                0x00003e02       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fp_split3.o)
+                0x00003e02                __fp_split3
+                0x00003e12                __fp_splitA
  .text.avr-libc.fplib
-                0x00003c94        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fp_zero.o)
-                0x00003c94                __fp_zero
-                0x00003c96                __fp_szero
+                0x00003e46        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fp_zero.o)
+                0x00003e46                __fp_zero
+                0x00003e48                __fp_szero
  .text.avr-libc.fplib
-                0x00003ca2        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(gesf2.o)
-                0x00003ca2                __gesf2
-                0x00003ca2                __gtsf2
+                0x00003e54        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(gesf2.o)
+                0x00003e54                __gesf2
+                0x00003e54                __gtsf2
  .text.avr-libc.fplib
-                0x00003cac        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(mulsf3.o)
-                0x00003cac                __mulsf3
+                0x00003e5e        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(mulsf3.o)
+                0x00003e5e                __mulsf3
  .text.avr-libc.fplib
-                0x00003cb4       0xd2 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
-                0x00003cd2                __mulsf3x
-                0x00003cd8                __mulsf3_pse
+                0x00003e66       0xd2 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
+                0x00003e84                __mulsf3x
+                0x00003e8a                __mulsf3_pse
  .text.avr-libc.fplib
-                0x00003d86        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(unordsf2.o)
-                0x00003d86                __unordsf2
+                0x00003f38        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(unordsf2.o)
+                0x00003f38                __unordsf2
  .text.libgcc.mul
-                0x00003d90       0x20 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_mulsi3.o)
-                0x00003d90                __mulsi3
+                0x00003f42       0x20 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_mulsi3.o)
+                0x00003f42                __mulsi3
  .text.libgcc.div
-                0x00003db0       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_divmodhi4.o)
-                0x00003db0                _div
-                0x00003db0                __divmodhi4
+                0x00003f62       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_divmodhi4.o)
+                0x00003f62                _div
+                0x00003f62                __divmodhi4
  .text.libgcc.div
-                0x00003dd8       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_udivmodsi4.o)
-                0x00003dd8                __udivmodsi4
+                0x00003f8a       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_udivmodsi4.o)
+                0x00003f8a                __udivmodsi4
  .text.libgcc.div
-                0x00003e1c       0x2e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_divmodsi4.o)
-                0x00003e1c                __divmodsi4
+                0x00003fce       0x2e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_divmodsi4.o)
+                0x00003fce                __divmodsi4
  .text.libgcc.div
-                0x00003e4a       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_negsi2.o)
-                0x00003e4a                __negsi2
- .text.libgcc   0x00003e5a        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_tablejump2.o)
-                0x00003e5a                __tablejump2__
+                0x00003ffc       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_negsi2.o)
+                0x00003ffc                __negsi2
+ .text.libgcc   0x0000400c        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_tablejump2.o)
+                0x0000400c                __tablejump2__
  .text.libgcc.mul
-                0x00003e66       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_muluhisi3.o)
-                0x00003e66                __muluhisi3
+                0x00004018       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_muluhisi3.o)
+                0x00004018                __muluhisi3
  .text.libgcc.mul
-                0x00003e7c       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_mulshisi3.o)
-                0x00003e7c                __mulshisi3
-                0x00003e82                __mulohisi3
+                0x0000402e       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_mulshisi3.o)
+                0x0000402e                __mulshisi3
+                0x00004034                __mulohisi3
  .text.libgcc.div
-                0x00003e8c       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_udivmodhi4.o)
-                0x00003e8c                __udivmodhi4
+                0x0000403e       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_udivmodhi4.o)
+                0x0000403e                __udivmodhi4
  .text.libgcc.mul
-                0x00003eb4       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_umulhisi3.o)
-                0x00003eb4                __umulhisi3
+                0x00004066       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_umulhisi3.o)
+                0x00004066                __umulhisi3
  .text.avr-libc
-                0x00003ed2       0x4e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(atol.o)
-                0x00003ed2                atol
+                0x00004084       0x4e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(atol.o)
+                0x00004084                atol
  .text.avr-libc
-                0x00003f20       0x12 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strcmp.o)
-                0x00003f20                strcmp
+                0x000040d2       0x12 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strcmp.o)
+                0x000040d2                strcmp
  .text.avr-libc
-                0x00003f32        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strcpy.o)
-                0x00003f32                strcpy
+                0x000040e4        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strcpy.o)
+                0x000040e4                strcpy
  .text.avr-libc
-                0x00003f40       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strncpy.o)
-                0x00003f40                strncpy
+                0x000040f2       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strncpy.o)
+                0x000040f2                strncpy
  .text.avr-libc
-                0x00003f5e       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(itoa.o)
-                0x00003f5e                __itoa
-                0x00003f5e                itoa
+                0x00004110       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(itoa.o)
+                0x00004110                __itoa
+                0x00004110                itoa
  .text.avr-libc
-                0x00003f74       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(itoa_ncheck.o)
-                0x00003f74                __itoa_ncheck
+                0x00004126       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(itoa_ncheck.o)
+                0x00004126                __itoa_ncheck
  .text.avr-libc
-                0x00003f8a       0x2a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(mulsi10.o)
-                0x00003f8a                __mulsi_const_10
+                0x0000413c       0x2a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(mulsi10.o)
+                0x0000413c                __mulsi_const_10
  .text.avr-libc
-                0x00003fb4       0x34 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(utoa_ncheck.o)
-                0x00003fb4                __utoa_ncheck
-                0x00003fb6                __utoa_common
+                0x00004166       0x34 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(utoa_ncheck.o)
+                0x00004166                __utoa_ncheck
+                0x00004168                __utoa_common
  .text.avr-libc
-                0x00003fe8       0x46 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(sprintf.o)
-                0x00003fe8                sprintf
+                0x0000419a       0x46 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(sprintf.o)
+                0x0000419a                sprintf
  .text.avr-libc
-                0x0000402e      0x3a4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
-                0x0000402e                vfprintf
+                0x000041e0      0x3a4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
+                0x000041e0                vfprintf
  .text.avr-libc
-                0x000043d2       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
-                0x000043d2                strnlen_P
+                0x00004584       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
+                0x00004584                strnlen_P
  .text.avr-libc
-                0x000043e8       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strnlen.o)
-                0x000043e8                strnlen
+                0x0000459a       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strnlen.o)
+                0x0000459a                strnlen
  .text.avr-libc
-                0x000043fe       0x20 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strrev.o)
-                0x000043fe                strrev
+                0x000045b0       0x20 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strrev.o)
+                0x000045b0                strrev
  .text.avr-libc
-                0x0000441e       0x70 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(fputc.o)
-                0x0000441e                fputc
+                0x000045d0       0x70 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(fputc.o)
+                0x000045d0                fputc
  .text.avr-libc
-                0x0000448e       0xbc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
-                0x0000448e                __ultoa_invert
+                0x00004640       0xbc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
+                0x00004640                __ultoa_invert
  .text.libgcc.prologue
-                0x0000454a       0x38 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_prologue.o)
-                0x0000454a                __prologue_saves__
+                0x000046fc       0x38 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_prologue.o)
+                0x000046fc                __prologue_saves__
  .text.libgcc.prologue
-                0x00004582       0x36 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_epilogue.o)
-                0x00004582                __epilogue_restores__
-                0x000045b8                . = ALIGN (0x2)
+                0x00004734       0x36 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_epilogue.o)
+                0x00004734                __epilogue_restores__
+                0x0000476a                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000045b8        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_exit.o)
-                0x000045b8                _exit
-                0x000045b8                exit
+ .fini9         0x0000476a        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_exit.o)
+                0x0000476a                _exit
+                0x0000476a                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
  *(.fini7)
  *(.fini7)
  *(.fini6)
- .fini6         0x000045b8       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_dtors.o)
-                0x000045b8                __do_global_dtors
+ .fini6         0x0000476a       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_dtors.o)
+                0x0000476a                __do_global_dtors
  *(.fini6)
  *(.fini5)
  *(.fini5)
@@ -2172,11 +2169,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000045ce        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_exit.o)
+ .fini0         0x00004780        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x000045d2                _etext = .
+                0x00004784                _etext = .
 
-.data           0x00800100      0x416 load address 0x000045d2
+.data           0x00800100      0x470 load address 0x00004784
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -2184,133 +2181,143 @@ END GROUP
                 0x00800100                empty
  .data.myFont   0x00800102      0x300 Sketch.o
                 0x00800102                myFont
+ .data.analog_reference
+                0x00800402        0x1 src/wiring_analog.o
+                0x00800402                analog_reference
  *(.rodata)
  *(.rodata*)
  .rodata.str1.1
-                0x00800402       0x30 include/arduino/TinyGPS++.o
+                0x00800403       0x30 include/arduino/TinyGPS++.o
                                  0x40 (size before relaxing)
  .rodata.str1.1
-                0x00800432       0x9a Sketch.o
-                                 0x9d (size before relaxing)
+                0x00800433       0xfe Sketch.o
+                                0x112 (size before relaxing)
  .rodata._ZL12fill_string4
-                0x008004cc        0x6 Sketch.o
+                0x00800531        0x6 Sketch.o
  .rodata._ZL12fill_string3
-                0x008004d2        0x6 Sketch.o
- .rodata._ZL12fill_string2
-                0x008004d8        0x8 Sketch.o
+                0x00800537        0x6 Sketch.o
  .rodata._ZL12fill_string1
-                0x008004e0        0x7 Sketch.o
+                0x0080053d        0x7 Sketch.o
  .rodata._ZTV14SoftwareSerial
-                0x008004e7       0x10 SoftwareSerial.o
-                0x008004e7                _ZTV14SoftwareSerial
+                0x00800544       0x10 SoftwareSerial.o
+                0x00800544                _ZTV14SoftwareSerial
  .rodata._ZTV14HardwareSerial
-                0x008004f7       0x10 src/HardwareSerial.o
-                0x008004f7                _ZTV14HardwareSerial
+                0x00800554       0x10 src/HardwareSerial.o
+                0x00800554                _ZTV14HardwareSerial
  .rodata.str1.1
-                0x00800507        0xe src/Print.o
+                0x00800564        0xc src/Print.o
                                  0x11 (size before relaxing)
  *(.gnu.linkonce.d*)
-                0x00800516                . = ALIGN (0x2)
- *fill*         0x00800515        0x1 
-                0x00800516                _edata = .
-                0x00800516                PROVIDE (__data_end, .)
+                0x00800570                . = ALIGN (0x2)
+                0x00800570                _edata = .
+                0x00800570                PROVIDE (__data_end, .)
 
-.bss            0x00800516      0x2f0
-                0x00800516                PROVIDE (__bss_start, .)
+.bss            0x00800570      0x2f6
+                0x00800570                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
  .bss.led3_output
-                0x00800516        0x2 Sketch.o
-                0x00800516                led3_output
+                0x00800570        0x2 Sketch.o
+                0x00800570                led3_output
  .bss.buttons_state
-                0x00800518        0x1 Sketch.o
-                0x00800518                buttons_state
- .bss.button1   0x00800519        0x2 Sketch.o
-                0x00800519                button1
+                0x00800572        0x1 Sketch.o
+                0x00800572                buttons_state
+ .bss.button2   0x00800573        0x2 Sketch.o
+                0x00800573                button2
+ .bss.button1   0x00800575        0x2 Sketch.o
+                0x00800575                button1
  .bss.time_state
-                0x0080051b        0x1 Sketch.o
-                0x0080051b                time_state
+                0x00800577        0x1 Sketch.o
+                0x00800577                time_state
  .bss.TickFct_OLED_output_state
-                0x0080051c        0x1 Sketch.o
-                0x0080051c                TickFct_OLED_output_state
+                0x00800578        0x1 Sketch.o
+                0x00800578                TickFct_OLED_output_state
+ .bss.switched_temp
+                0x00800579        0x1 Sketch.o
+                0x00800579                switched_temp
  .bss.TickFct1_state
-                0x0080051d        0x1 Sketch.o
-                0x0080051d                TickFct1_state
- .bss.t7        0x0080051e       0x21 Sketch.o
-                0x0080051e                t7
- .bss.t6        0x0080053f       0x21 Sketch.o
-                0x0080053f                t6
- .bss.t5        0x00800560       0x21 Sketch.o
-                0x00800560                t5
- .bss.t4        0x00800581       0x21 Sketch.o
-                0x00800581                t4
- .bss.t3        0x008005a2       0x21 Sketch.o
-                0x008005a2                t3
- .bss.t2        0x008005c3       0x21 Sketch.o
-                0x008005c3                t2
- .bss.t1        0x008005e4       0x21 Sketch.o
-                0x008005e4                t1
- .bss.runner    0x00800605        0x6 Sketch.o
-                0x00800605                runner
- .bss.gpsPort   0x0080060b       0x1f Sketch.o
-                0x0080060b                gpsPort
- .bss.gps       0x0080062a       0xad Sketch.o
-                0x0080062a                gps
- .bss.uchar     0x008006d7        0xa Sketch.o
-                0x008006d7                uchar
+                0x0080057a        0x1 Sketch.o
+                0x0080057a                TickFct1_state
+ .bss.t7        0x0080057b       0x21 Sketch.o
+                0x0080057b                t7
+ .bss.t6        0x0080059c       0x21 Sketch.o
+                0x0080059c                t6
+ .bss.t5        0x008005bd       0x21 Sketch.o
+                0x008005bd                t5
+ .bss.t4        0x008005de       0x21 Sketch.o
+                0x008005de                t4
+ .bss.t3        0x008005ff       0x21 Sketch.o
+                0x008005ff                t3
+ .bss.t2        0x00800620       0x21 Sketch.o
+                0x00800620                t2
+ .bss.t1        0x00800641       0x21 Sketch.o
+                0x00800641                t1
+ .bss.runner    0x00800662        0x6 Sketch.o
+                0x00800662                runner
+ .bss.padding   0x00800668        0x1 Sketch.o
+                0x00800668                padding
+ .bss.light_reading
+                0x00800669        0x2 Sketch.o
+                0x00800669                light_reading
+ .bss.gpsPort   0x0080066b       0x1f Sketch.o
+                0x0080066b                gpsPort
+ .bss.gps       0x0080068a       0xad Sketch.o
+                0x0080068a                gps
+ .bss.uchar     0x00800737        0xa Sketch.o
+                0x00800737                uchar
  .bss.tempF_uchar
-                0x008006e1        0x2 Sketch.o
-                0x008006e1                tempF_uchar
- .bss.sensors   0x008006e3       0x13 Sketch.o
-                0x008006e3                sensors
- .bss.oneWire   0x008006f6        0xe Sketch.o
-                0x008006f6                oneWire
- .bss.counter   0x00800704        0x2 Sketch.o
-                0x00800704                counter
- .bss.tempF     0x00800706        0x4 Sketch.o
-                0x00800706                tempF
- .bss.tempC     0x0080070a        0x4 Sketch.o
-                0x0080070a                tempC
- .bss.low_temp  0x0080070e        0x4 Sketch.o
-                0x0080070e                low_temp
- .bss.max_temp  0x00800712        0x4 Sketch.o
-                0x00800712                max_temp
+                0x00800741        0x2 Sketch.o
+                0x00800741                tempF_uchar
+ .bss.sensors   0x00800743       0x13 Sketch.o
+                0x00800743                sensors
+ .bss.oneWire   0x00800756        0xe Sketch.o
+                0x00800756                oneWire
+ .bss.counter   0x00800764        0x2 Sketch.o
+                0x00800764                counter
+ .bss.tempF     0x00800766        0x4 Sketch.o
+                0x00800766                tempF
+ .bss.tempC     0x0080076a        0x4 Sketch.o
+                0x0080076a                tempC
+ .bss.low_temp  0x0080076e        0x4 Sketch.o
+                0x0080076e                low_temp
+ .bss.max_temp  0x00800772        0x4 Sketch.o
+                0x00800772                max_temp
  .bss._ZL16i2c_errors_count
-                0x00800716        0x2 Sketch.o
+                0x00800776        0x2 Sketch.o
  .bss._ZN14SoftwareSerial20_receive_buffer_headE
-                0x00800718        0x1 SoftwareSerial.o
-                0x00800718                _ZN14SoftwareSerial20_receive_buffer_headE
+                0x00800778        0x1 SoftwareSerial.o
+                0x00800778                _ZN14SoftwareSerial20_receive_buffer_headE
  .bss._ZN14SoftwareSerial20_receive_buffer_tailE
-                0x00800719        0x1 SoftwareSerial.o
-                0x00800719                _ZN14SoftwareSerial20_receive_buffer_tailE
+                0x00800779        0x1 SoftwareSerial.o
+                0x00800779                _ZN14SoftwareSerial20_receive_buffer_tailE
  .bss._ZN14SoftwareSerial15_receive_bufferE
-                0x0080071a       0x40 SoftwareSerial.o
-                0x0080071a                _ZN14SoftwareSerial15_receive_bufferE
+                0x0080077a       0x40 SoftwareSerial.o
+                0x0080077a                _ZN14SoftwareSerial15_receive_bufferE
  .bss._ZN14SoftwareSerial13active_objectE
-                0x0080075a        0x2 SoftwareSerial.o
-                0x0080075a                _ZN14SoftwareSerial13active_objectE
- .bss.Serial    0x0080075c       0x9d src/HardwareSerial0.o
-                0x0080075c                Serial
- .bss.intFunc   0x008007f9        0x4 src/WInterrupts.o
+                0x008007ba        0x2 SoftwareSerial.o
+                0x008007ba                _ZN14SoftwareSerial13active_objectE
+ .bss.Serial    0x008007bc       0x9d src/HardwareSerial0.o
+                0x008007bc                Serial
+ .bss.intFunc   0x00800859        0x4 src/WInterrupts.o
  .bss.timer0_fract
-                0x008007fd        0x1 src/wiring.o
+                0x0080085d        0x1 src/wiring.o
  .bss.timer0_millis
-                0x008007fe        0x4 src/wiring.o
-                0x008007fe                timer0_millis
+                0x0080085e        0x4 src/wiring.o
+                0x0080085e                timer0_millis
  .bss.timer0_overflow_count
-                0x00800802        0x4 src/wiring.o
-                0x00800802                timer0_overflow_count
+                0x00800862        0x4 src/wiring.o
+                0x00800862                timer0_overflow_count
  *(COMMON)
-                0x00800806                PROVIDE (__bss_end, .)
-                0x000045d2                __data_load_start = LOADADDR (.data)
-                0x000049e8                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00800866                PROVIDE (__bss_end, .)
+                0x00004784                __data_load_start = LOADADDR (.data)
+                0x00004bf4                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800806        0x0
-                0x00800806                PROVIDE (__noinit_start, .)
+.noinit         0x00800866        0x0
+                0x00800866                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x00800806                PROVIDE (__noinit_end, .)
-                0x00800806                _end = .
-                0x00800806                PROVIDE (__heap_start, .)
+                0x00800866                PROVIDE (__noinit_end, .)
+                0x00800866                _end = .
+                0x00800866                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -2365,6 +2372,7 @@ END GROUP
  .comment       0x00000030       0x31 src/Stream.o
  .comment       0x00000030       0x31 src/WInterrupts.o
  .comment       0x00000030       0x31 src/wiring.o
+ .comment       0x00000030       0x31 src/wiring_analog.o
  .comment       0x00000030       0x31 src/wiring_digital.o
  .comment       0x00000030       0x31 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(sprintf.o)
  .comment       0x00000030       0x2c c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
